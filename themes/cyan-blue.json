@@ -1,0 +1,36 @@
+{
+  "name": "Cyan Blue",
+  "id": "cyan-blue",
+  "description": "Data, analytics, APIs",
+  "dark": {
+    "gradient": ["#64D2FF", "#4FC3F7", "#29B6F6", "#039BE5", "#0277BD"],
+    "stroke": "#01395D",
+    "shadow": "#01395D",
+    "shadow_opacity": 0.5,
+    "watermark_fill": "#000000",
+    "tagline_fill": "#6E6E73"
+  },
+  "light": {
+    "gradient": ["#0071A4", "#0288D1", "#0277BD", "#01579B", "#014F86"],
+    "stroke": "#002940",
+    "shadow": "#002940",
+    "shadow_opacity": 0.4,
+    "watermark_fill": "#ffffff",
+    "tagline_fill": "#86868B"
+  },
+  "mermaid": {
+    "node1": { "fill": "#64D2FF", "stroke": "#0071A4", "color": "#000" },
+    "node2": { "fill": "#4FC3F7", "stroke": "#0288D1", "color": "#000" },
+    "node3": { "fill": "#29B6F6", "stroke": "#0277BD", "color": "#000" },
+    "node4": { "fill": "#039BE5", "stroke": "#01579B", "color": "#fff" },
+    "node5": { "fill": "#0277BD", "stroke": "#014F86", "color": "#fff" },
+    "node6": { "fill": "#4FC3F7", "stroke": "#64D2FF", "color": "#000" }
+  },
+  "badges": {
+    "primary": "64D2FF",
+    "secondary": "29B6F6",
+    "tertiary": "4FC3F7",
+    "quaternary": "039BE5",
+    "quinary": "0277BD"
+  }
+}

@@ -1,0 +1,36 @@
+{
+  "name": "Magenta Purple",
+  "id": "magenta-purple",
+  "description": "AI/ML, creative tools",
+  "dark": {
+    "gradient": ["#FF3CAC", "#E040FB", "#784BA0", "#2B86C5", "#00E5FF"],
+    "stroke": "#2A0040",
+    "shadow": "#2A0040",
+    "shadow_opacity": 0.5,
+    "watermark_fill": "#000000",
+    "tagline_fill": "#6E6E73"
+  },
+  "light": {
+    "gradient": ["#D4006A", "#AB00D9", "#5C3D8F", "#1A6B9E", "#0097A7"],
+    "stroke": "#1A0030",
+    "shadow": "#1A0030",
+    "shadow_opacity": 0.4,
+    "watermark_fill": "#ffffff",
+    "tagline_fill": "#86868B"
+  },
+  "mermaid": {
+    "node1": { "fill": "#FF3CAC", "stroke": "#D4006A", "color": "#fff" },
+    "node2": { "fill": "#E040FB", "stroke": "#AB00D9", "color": "#fff" },
+    "node3": { "fill": "#784BA0", "stroke": "#5C3D8F", "color": "#fff" },
+    "node4": { "fill": "#2B86C5", "stroke": "#1A6B9E", "color": "#fff" },
+    "node5": { "fill": "#00E5FF", "stroke": "#0097A7", "color": "#000" },
+    "node6": { "fill": "#E040FB", "stroke": "#FF3CAC", "color": "#fff" }
+  },
+  "badges": {
+    "primary": "FF3CAC",
+    "secondary": "E040FB",
+    "tertiary": "784BA0",
+    "quaternary": "2B86C5",
+    "quinary": "00E5FF"
+  }
+}
