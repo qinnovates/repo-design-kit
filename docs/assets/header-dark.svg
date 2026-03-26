@@ -1,0 +1,39 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="700" height="180" viewBox="0 0 700 180">
+  <defs>
+    <linearGradient id="grad" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" style="stop-color:#FF2D55;stop-opacity:1" />
+      <stop offset="33%" style="stop-color:#BF5AF2;stop-opacity:1" />
+      <stop offset="66%" style="stop-color:#5E5CE6;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#64D2FF;stop-opacity:1" />
+    </linearGradient>
+    <linearGradient id="bar" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" style="stop-color:#FF2D55;stop-opacity:0.9" />
+      <stop offset="33%" style="stop-color:#BF5AF2;stop-opacity:0.9" />
+      <stop offset="66%" style="stop-color:#5E5CE6;stop-opacity:0.9" />
+      <stop offset="100%" style="stop-color:#64D2FF;stop-opacity:0.9" />
+    </linearGradient>
+  </defs>
+
+  <!-- Top gradient bar with embedded watermark -->
+  <rect x="0" y="0" width="700" height="4" fill="url(#bar)" rx="1"/>
+  <text x="665" y="3.5" font-family="'SF Mono', monospace" font-size="3" fill="#ffffff" opacity="0.06">KevQ</text>
+
+  <!-- Title -->
+  <text x="350" y="68" font-family="'SF Mono', 'Fira Code', 'Cascadia Code', monospace" font-size="36" font-weight="bold" fill="url(#grad)" text-anchor="middle" letter-spacing="3">
+    REPO SKIN
+  </text>
+
+  <!-- Subtitle -->
+  <text x="350" y="100" font-family="'SF Mono', 'Fira Code', 'Cascadia Code', monospace" font-size="14" fill="#8E8E93" text-anchor="middle" letter-spacing="1">
+    Give your GitHub repos some color.
+  </text>
+
+  <!-- Decorative dots -->
+  <text x="350" y="138" font-family="'SF Mono', 'Fira Code', monospace" font-size="12" fill="#48484A" text-anchor="middle" letter-spacing="6">
+    &#x2022; &#x2022; &#x2022; &#x2022; &#x2022; &#x2022; &#x2022;
+  </text>
+
+  <!-- Bottom gradient bar with embedded watermark -->
+  <rect x="0" y="170" width="700" height="4" fill="url(#bar)" rx="1"/>
+  <text x="665" y="173.5" font-family="'SF Mono', monospace" font-size="3" fill="#ffffff" opacity="0.06">KevQ</text>
+</svg>
