@@ -24,6 +24,7 @@ Quorum-approved (5 SME panel, 2026-03-26). The adversarial critic cut 40 propose
 | `docs/` folder | README exceeds 300 lines and needs splitting |
 | `.github/dependabot.yml` | Project has real dependencies |
 | `Dockerfile` | Project deploys as a container |
+| Star History chart in README | Project is public and gaining traction |
 
 ## Tier 3 — Public Repos Only (when earned)
 

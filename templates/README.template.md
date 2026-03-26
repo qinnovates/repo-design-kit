@@ -115,6 +115,12 @@ src/
 
 ---
 
+## Star History
+
+[![Star History Chart](https://api.star-history.com/svg?repos=USER/REPO&type=Date)](https://star-history.com/#USER/REPO&Date)
+
+---
+
 ## Development
 
 ```bash

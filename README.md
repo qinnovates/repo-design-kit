@@ -237,6 +237,27 @@ Hover over the footnote number to see a preview. Click to jump to the definition
 
 GitHub automatically switches the image based on the user's theme.
 
+### Star History Chart
+
+Every public repo should include a star history graph. It's a live SVG that updates automatically — zero maintenance.
+
+```markdown
+[![Star History Chart](https://api.star-history.com/svg?repos=USER/REPO&type=Date)](https://star-history.com/#USER/REPO&Date)
+```
+
+Options:
+- `&type=Date` — timeline view (default, best for most repos)
+- `&type=Timeline` — compact timeline
+- `&legend=top-left` — move legend position
+
+Multiple repos in one chart:
+```markdown
+[![Star History Chart](https://api.star-history.com/svg?repos=USER/REPO1,USER/REPO2&type=Date)](https://star-history.com/#USER/REPO1&USER/REPO2&Date)
+```
+
+> [!NOTE]
+> The chart is a live SVG from star-history.com — it updates automatically as your repo gains stars. No CI or build step needed.
+
 ### Math (LaTeX)
 
 Inline: `$E = mc^2$` → $E = mc^2$
