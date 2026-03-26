@@ -1,6 +1,6 @@
 # Theme System — How It Works
 
-Most repos have random colors. A badge is blue, a diagram is gray, the header is whatever the default is. Repo Skin fixes that by putting **every color in one file** and generating everything from it.
+Most repos have random colors. A badge is blue, a diagram is gray, the header is whatever the default is. Repo Design Kit fixes that by putting **every color in one file** so your repo has a cohesive visual identity.
 
 ## The Problem
 
@@ -13,22 +13,24 @@ header-light.svg  →  different gradient hex values pasted in
 Mermaid diagram   →  style lines with random hex colors
 ```
 
-Change your mind about the color? You're editing 4+ files manually and hoping you didn't miss one.
+Change your mind about the color? You're editing 4+ files and hoping you didn't miss one.
 
 ## The Solution: Theme Variables
 
-One JSON file defines everything:
+One JSON file is the reference for everything:
 
 ```
 themes/lime-cyan.json   ← single source of truth
         │
-        ├──▶ docs/assets/header-dark.svg    (generated)
-        ├──▶ docs/assets/header-light.svg   (generated)
-        ├──▶ docs/assets/mermaid-styles.md  (generated)
-        └──▶ docs/assets/badges.md          (generated)
+        │  You read the values and apply them to:
+        │
+        ├──▶ docs/assets/header-dark.svg    (copy hex values into SVG)
+        ├──▶ docs/assets/header-light.svg   (copy hex values into SVG)
+        ├──▶ Mermaid diagrams               (copy style block into diagrams)
+        └──▶ Badge URLs                     (copy hex into shields.io URLs)
 ```
 
-Change the JSON → re-run the script → everything updates.
+No scripts. No build tools. No code execution. You open the JSON, copy the values, paste them where they go. The JSON is a **reference file**, not an input to a generator.
 
 ## Theme File Structure
 
@@ -110,41 +112,51 @@ Both should be significantly darker than the gradient itself. Usually the darkes
 
 ### 1. Pick a theme
 
-```bash
-ls themes/
-# lime-cyan.json  magenta-purple.json  blue-indigo.json  ...
-```
+Browse `themes/` and open the JSON for the palette you want. Each file has all the hex values you need.
 
-### 2. Run the script
+### 2. Copy the SVG template
 
-```bash
-./scripts/apply-theme.sh themes/lime-cyan.json "YOUR PROJECT" "Your tagline here."
-```
+Copy `docs/assets/header-dark.svg` and `docs/assets/header-light.svg` into your repo at the same path. Then open each SVG in a text editor and replace:
 
-This generates 4 files in `docs/assets/`.
+- **The gradient `stop-color` values** — paste from `dark.gradient[]` or `light.gradient[]`
+- **The `stroke` value** on the `<rect>` elements
+- **The `flood-color` value** in the `<filter>` — paste from `shadow`
+- **The `flood-opacity` value** — paste from `shadow_opacity`
+- **The project name** in the `<text>` element
+- **The tagline** in the second `<text>` element
 
 ### 3. Add the header to README.md
 
-The script prints the exact HTML to paste. Copy it.
+```html
+<p align="center">
+  <picture>
+    <source media="(prefers-color-scheme: dark)" srcset="docs/assets/header-dark.svg">
+    <source media="(prefers-color-scheme: light)" srcset="docs/assets/header-light.svg">
+    <img alt="Your Project" src="docs/assets/header-dark.svg" width="700">
+  </picture>
+</p>
+```
 
-### 4. Use the Mermaid styles
+### 4. Apply Mermaid styles
 
-Open `docs/assets/mermaid-styles.md` — it has a ready-to-paste style block:
+Open your theme JSON and find the `mermaid` section. Copy the values into style lines at the bottom of any Mermaid diagram:
 
 ```
     style NodeA fill:#39FF14,stroke:#2BD600,color:#000
     style NodeB fill:#00FF87,stroke:#00D974,color:#000
-    ...
+    style NodeC fill:#00E5FF,stroke:#00B4D8,color:#000
+    style NodeD fill:#00B4D8,stroke:#0096C7,color:#000
+    style NodeE fill:#0096C7,stroke:#007EA7,color:#fff
+    style NodeF fill:#00FF87,stroke:#39FF14,color:#000
 ```
 
-Add these lines at the bottom of any Mermaid diagram in your README.
+### 5. Apply badge colors
 
-### 5. Use the badge colors
-
-Open `docs/assets/badges.md` — it has the hex codes for shields.io:
+Use the `badges` hex codes from your theme JSON in shields.io URLs:
 
 ```html
 <img src="https://img.shields.io/badge/build-passing-39FF14?style=flat-square">
+<img src="https://img.shields.io/badge/license-MIT-00E5FF?style=flat-square">
 ```
 
 ## Creating a Custom Theme
@@ -164,11 +176,16 @@ Edit the hex values. Rules of thumb:
 5. **Mermaid text** — `#000` for light fills (value > `#888`), `#fff` for dark fills
 6. **Badge hex** — same as gradient stops, without the `#`
 
-Then run:
+## Why No Script?
 
-```bash
-./scripts/apply-theme.sh themes/my-theme.json "MY PROJECT" "My tagline."
-```
+A previous version included a shell script that read theme JSON and generated SVGs. It was removed because:
+
+- Shell scripts that interpolate JSON values into file output are an injection surface
+- Users shouldn't have to audit 200 lines of bash to trust a design tool
+- The manual workflow is 5 minutes of copy-paste — a script saves 3 minutes and adds risk
+- The theme JSON is a **reference document**, not a build input
+
+If you want automation, use a GitHub Action in a sandboxed CI runner — not a local script.
 
 ## File Tree
 
@@ -182,26 +199,21 @@ themes/
 ├── green-teal.json
 └── red-orange.json
 
-scripts/
-└── apply-theme.sh        # Reads any theme JSON, generates SVGs + docs
-
-docs/assets/               # Generated output (committed to your repo)
-├── header-dark.svg        # Dark mode header
-├── header-light.svg       # Light mode header
-├── mermaid-styles.md      # Copy-paste Mermaid style block
-└── badges.md              # Badge hex codes for shields.io
+docs/assets/               # Your repo's themed assets
+├── header-dark.svg        # Dark mode header (edit with theme values)
+├── header-light.svg       # Light mode header (edit with theme values)
 ```
 
 ## FAQ
 
-**Q: Do I need Node.js / npm / any build tool?**
-No. The script uses bash and python3 (which ships with macOS). Zero dependencies.
+**Q: Do I need any build tools?**
+No. Open JSON, copy hex values, paste into SVG and README. That's it.
 
 **Q: What if I want different Mermaid colors for different diagrams?**
-The theme gives you 6 node styles. You can assign them to any node name — `NodeA` through `NodeF` are just conventions. Rename them to match your diagram.
+The theme gives you 6 node styles. Assign them to any node name — `NodeA` through `NodeF` are just conventions.
 
 **Q: Can I have more than 6 Mermaid node styles?**
-Add more entries to the `mermaid` object in the theme JSON (`node7`, `node8`, ...) and extend the script. But 6 covers most diagrams — primary, secondary, accent, muted, deep, alt.
+Add more entries to the `mermaid` object in the theme JSON (`node7`, `node8`, ...). 6 covers most diagrams.
 
 **Q: Why JSON and not YAML/TOML?**
-Python's `json` module is a stdlib one-liner. No pip install needed. YAML and TOML would require external parsers.
+JSON is universally readable. Every editor highlights it. No parser needed — it's a reference file you read with your eyes.
