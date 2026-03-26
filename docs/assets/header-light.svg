@@ -26,12 +26,12 @@
   <text x="688" y="7" font-family="monospace" font-size="4" fill="#ffffff" opacity="0.08" text-anchor="end">KevQ</text>
 
   <!-- Title -->
-  <text x="350" y="75" font-family="'SF Mono', 'JetBrains Mono', 'Fira Code', monospace" font-size="38" font-weight="700" fill="url(#title)" text-anchor="middle" letter-spacing="4">REPO SKIN</text>
+  <text x="350" y="78" font-family="'SF Pro Display', 'Inter', 'Helvetica Neue', 'Segoe UI', sans-serif" font-size="40" font-weight="300" fill="url(#title)" text-anchor="middle" letter-spacing="12">REPO SKIN</text>
 
   <!-- Tagline -->
-  <text x="350" y="105" font-family="'SF Mono', 'JetBrains Mono', monospace" font-size="13" fill="#86868B" text-anchor="middle" letter-spacing="0.5">Give your GitHub repos some color.</text>
+  <text x="350" y="110" font-family="'SF Pro Text', 'Inter', 'Helvetica Neue', sans-serif" font-size="12" font-weight="300" fill="#86868B" text-anchor="middle" letter-spacing="2">Give your GitHub repos some color.</text>
 
-  <!-- Bottom border (reversed) -->
+  <!-- Bottom border -->
   <rect x="0" y="152" width="700" height="8" fill="url(#botbar)"/>
   <text x="688" y="159" font-family="monospace" font-size="4" fill="#ffffff" opacity="0.08" text-anchor="end">KevQ</text>
 </svg>
