@@ -337,6 +337,31 @@ stateDiagram-v2
     }
 ```
 
+### Decision Tree
+
+```mermaid
+gitGraph
+    commit id:"init"
+    commit id:"scaffold"
+    branch feature-auth
+    checkout feature-auth
+    commit id:"add-jwt"
+    commit id:"add-middleware" tag:"v0.2.0"
+    checkout main
+    commit id:"hotfix" type: HIGHLIGHT
+    commit id:"docs"
+    merge feature-auth
+    commit id:"release" tag:"v1.0.0"
+    branch feature-dashboard
+    checkout feature-dashboard
+    commit id:"ui-shell"
+    commit id:"charts"
+    checkout main
+    commit id:"ci-fix"
+    merge feature-dashboard
+    commit id:"ship" tag:"v1.1.0"
+```
+
 ### Copy-Paste Style Block
 
 Use this style block in any Mermaid diagram for consistent Neo colors:
