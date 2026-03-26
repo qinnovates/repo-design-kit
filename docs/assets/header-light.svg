@@ -1,39 +1,37 @@
-<svg xmlns="http://www.w3.org/2000/svg" width="700" height="180" viewBox="0 0 700 180">
+<svg xmlns="http://www.w3.org/2000/svg" width="700" height="160" viewBox="0 0 700 160">
   <defs>
-    <linearGradient id="grad" x1="0%" y1="0%" x2="100%" y2="0%">
-      <stop offset="0%" style="stop-color:#D70015;stop-opacity:1" />
-      <stop offset="33%" style="stop-color:#8944AB;stop-opacity:1" />
-      <stop offset="66%" style="stop-color:#3634A3;stop-opacity:1" />
-      <stop offset="100%" style="stop-color:#0071A4;stop-opacity:1" />
+    <linearGradient id="topbar" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#D4006A"/>
+      <stop offset="25%" stop-color="#AB00D9"/>
+      <stop offset="50%" stop-color="#5C3D8F"/>
+      <stop offset="75%" stop-color="#1A6B9E"/>
+      <stop offset="100%" stop-color="#0097A7"/>
     </linearGradient>
-    <linearGradient id="bar" x1="0%" y1="0%" x2="100%" y2="0%">
-      <stop offset="0%" style="stop-color:#D70015;stop-opacity:0.9" />
-      <stop offset="33%" style="stop-color:#8944AB;stop-opacity:0.9" />
-      <stop offset="66%" style="stop-color:#3634A3;stop-opacity:0.9" />
-      <stop offset="100%" style="stop-color:#0071A4;stop-opacity:0.9" />
+    <linearGradient id="botbar" x1="100%" y1="0%" x2="0%" y2="0%">
+      <stop offset="0%" stop-color="#D4006A"/>
+      <stop offset="25%" stop-color="#AB00D9"/>
+      <stop offset="50%" stop-color="#5C3D8F"/>
+      <stop offset="75%" stop-color="#1A6B9E"/>
+      <stop offset="100%" stop-color="#0097A7"/>
+    </linearGradient>
+    <linearGradient id="title" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#D4006A"/>
+      <stop offset="50%" stop-color="#AB00D9"/>
+      <stop offset="100%" stop-color="#0097A7"/>
     </linearGradient>
   </defs>
 
-  <!-- Top gradient bar with embedded watermark -->
-  <rect x="0" y="0" width="700" height="4" fill="url(#bar)" rx="1"/>
-  <text x="665" y="3.5" font-family="'SF Mono', monospace" font-size="3" fill="#ffffff" opacity="0.06">KevQ</text>
+  <!-- Top border -->
+  <rect x="0" y="0" width="700" height="8" fill="url(#topbar)"/>
+  <text x="688" y="7" font-family="monospace" font-size="4" fill="#ffffff" opacity="0.08" text-anchor="end">KevQ</text>
 
   <!-- Title -->
-  <text x="350" y="68" font-family="'SF Mono', 'Fira Code', 'Cascadia Code', monospace" font-size="36" font-weight="bold" fill="url(#grad)" text-anchor="middle" letter-spacing="3">
-    REPO SKIN
-  </text>
+  <text x="350" y="75" font-family="'SF Mono', 'JetBrains Mono', 'Fira Code', monospace" font-size="38" font-weight="700" fill="url(#title)" text-anchor="middle" letter-spacing="4">REPO SKIN</text>
 
-  <!-- Subtitle -->
-  <text x="350" y="100" font-family="'SF Mono', 'Fira Code', 'Cascadia Code', monospace" font-size="14" fill="#636366" text-anchor="middle" letter-spacing="1">
-    Give your GitHub repos some color.
-  </text>
+  <!-- Tagline -->
+  <text x="350" y="105" font-family="'SF Mono', 'JetBrains Mono', monospace" font-size="13" fill="#86868B" text-anchor="middle" letter-spacing="0.5">Give your GitHub repos some color.</text>
 
-  <!-- Decorative dots -->
-  <text x="350" y="138" font-family="'SF Mono', 'Fira Code', monospace" font-size="12" fill="#C7C7CC" text-anchor="middle" letter-spacing="6">
-    &#x2022; &#x2022; &#x2022; &#x2022; &#x2022; &#x2022; &#x2022;
-  </text>
-
-  <!-- Bottom gradient bar with embedded watermark -->
-  <rect x="0" y="170" width="700" height="4" fill="url(#bar)" rx="1"/>
-  <text x="665" y="173.5" font-family="'SF Mono', monospace" font-size="3" fill="#ffffff" opacity="0.06">KevQ</text>
+  <!-- Bottom border (reversed) -->
+  <rect x="0" y="152" width="700" height="8" fill="url(#botbar)"/>
+  <text x="688" y="159" font-family="monospace" font-size="4" fill="#ffffff" opacity="0.08" text-anchor="end">KevQ</text>
 </svg>
