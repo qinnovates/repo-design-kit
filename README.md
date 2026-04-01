@@ -1,8 +1,8 @@
 <p align="center">
   <picture>
-    <source media="(prefers-color-scheme: dark)" srcset="docs/assets/header-dark.svg">
+    <source media="(prefers-color-scheme: dark)" srcset="docs/assets/header-v2.svg">
     <source media="(prefers-color-scheme: light)" srcset="docs/assets/header-light.svg">
-    <img alt="Repo Design Kit" src="docs/assets/header-dark.svg" width="400">
+    <img alt="Repo Design Kit" src="docs/assets/header-v2.svg" width="400">
   </picture>
 </p>
 
@@ -82,7 +82,7 @@ cp -r repo-skin/docs/assets/ your-project/docs/assets/
 cp repo-skin/templates/README.template.md your-project/README.md
 ```
 
-**2. Edit the SVG header** — change the title text in `docs/assets/header-dark.svg` and `header-light.svg`:
+**2. Edit the SVG header** — change the title text in `docs/assets/header-v2.svg` and `header-light.svg`:
 
 ```xml
 <!-- Find this line and change the text -->
@@ -431,9 +431,9 @@ Use this style block in any Mermaid diagram for consistent Neo colors:
 ```markdown
 <p align="center">
   <picture>
-    <source media="(prefers-color-scheme: dark)" srcset="docs/assets/header-dark.svg">
+    <source media="(prefers-color-scheme: dark)" srcset="docs/assets/header-v2.svg">
     <source media="(prefers-color-scheme: light)" srcset="docs/assets/header-light.svg">
-    <img alt="Project Name" src="docs/assets/header-dark.svg" width="700">
+    <img alt="Project Name" src="docs/assets/header-v2.svg" width="700">
   </picture>
 </p>
 
@@ -525,7 +525,7 @@ graph TD
 ```
 repo-design-kit/
 ├── docs/assets/
-│   ├── header-dark.svg              # Generated SVG header (dark mode)
+│   ├── header-v2.svg              # Generated SVG header (dark mode)
 │   └── header-light.svg             # Generated SVG header (light mode)
 ├── scripts/
 │   ├── gen-header.py                # Liquid glass SVG generator
