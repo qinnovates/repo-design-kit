@@ -14,7 +14,7 @@
 </p>
 
 
-<p align="center"><img src="templates/skins/renders/plasma-vesicle.svg" width="680" alt="plasma-vesicle"></p>
+<p align="center"><img src="templates/skins/renders/divider.svg" width="100%" alt="divider"></p>
 
 
 > [!TIP]
@@ -27,7 +27,7 @@ A collection of **SVG header skins**, **Mermaid diagram color palettes**, and **
 No build tools. No dependencies. Just SVG files and markdown.
 
 
-<p align="center"><img src="templates/skins/renders/synth-meridian.svg" width="680" alt="synth-meridian"></p>
+<p align="center"><img src="templates/skins/renders/divider.svg" width="100%" alt="divider"></p>
 
 
 ## Before & After
@@ -53,7 +53,7 @@ graph LR
 ```
 
 
-<p align="center"><img src="templates/skins/renders/reactor-bloom.svg" width="680" alt="reactor-bloom"></p>
+<p align="center"><img src="templates/skins/renders/divider.svg" width="100%" alt="divider"></p>
 
 
 ## Table of Contents
@@ -66,7 +66,7 @@ graph LR
 - [Included Files](#included-files)
 
 
-<p align="center"><img src="templates/skins/renders/abyssal-signal.svg" width="680" alt="abyssal-signal"></p>
+<p align="center"><img src="templates/skins/renders/divider.svg" width="100%" alt="divider"></p>
 
 
 ## Quick Start
@@ -94,7 +94,7 @@ cp repo-skin/templates/README.template.md your-project/README.md
 **4. Push.** GitHub renders everything automatically.
 
 
-<p align="center"><img src="templates/skins/renders/synaptic-discharge.svg" width="680" alt="synaptic-discharge"></p>
+<p align="center"><img src="templates/skins/renders/divider.svg" width="100%" alt="divider"></p>
 
 
 ## Skins — 25 Options
@@ -143,7 +143,7 @@ Structural gradient techniques — not just color swaps.
 > Preview all skins locally: open `templates/skins/preview/turrell-cloud.html` or `experimental.html` in a browser. Toggle button cycles black / transparent / checker backgrounds.
 
 
-<p align="center"><img src="templates/skins/renders/plasma-liturgy.svg" width="680" alt="plasma-liturgy"></p>
+<p align="center"><img src="templates/skins/renders/divider.svg" width="100%" alt="divider"></p>
 
 
 ## Dynamic Features
@@ -291,7 +291,7 @@ $$
 $$\sum_{i=1}^{n} x_i = x_1 + x_2 + \cdots + x_n$$
 
 
-<p align="center"><img src="templates/skins/renders/xenobiome-signal.svg" width="680" alt="xenobiome-signal"></p>
+<p align="center"><img src="templates/skins/renders/divider.svg" width="100%" alt="divider"></p>
 
 
 ## Mermaid Color Palettes
@@ -420,7 +420,7 @@ Use this style block in any Mermaid diagram for consistent Neo colors:
 ```
 
 
-<p align="center"><img src="templates/skins/renders/upload-hemorrhage.svg" width="680" alt="upload-hemorrhage"></p>
+<p align="center"><img src="templates/skins/renders/divider.svg" width="100%" alt="divider"></p>
 
 
 ## Full Template
@@ -443,7 +443,7 @@ Use this style block in any Mermaid diagram for consistent Neo colors:
 </p>
 
 
-<p align="center"><img src="templates/skins/renders/synaptic-aurealis.svg" width="680" alt="synaptic-aurealis"></p>
+<p align="center"><img src="templates/skins/renders/divider.svg" width="100%" alt="divider"></p>
 
 
 > [!TIP]
@@ -508,7 +508,7 @@ graph TD
 [MIT](LICENSE.md)
 
 
-<p align="center"><img src="templates/skins/renders/pelagic-drift.svg" width="680" alt="pelagic-drift"></p>
+<p align="center"><img src="templates/skins/renders/divider.svg" width="100%" alt="divider"></p>
 
 
 <p align="center">Built by <a href="https://github.com/USER">You</a></p>
@@ -517,7 +517,7 @@ graph TD
 </details>
 
 
-<p align="center"><img src="templates/skins/renders/split-field.svg" width="680" alt="split-field"></p>
+<p align="center"><img src="templates/skins/renders/divider.svg" width="100%" alt="divider"></p>
 
 
 ## Included Files
@@ -545,7 +545,7 @@ repo-design-kit/
 ```
 
 
-<p align="center"><img src="templates/skins/renders/double-aperture.svg" width="680" alt="double-aperture"></p>
+<p align="center"><img src="templates/skins/renders/divider.svg" width="100%" alt="divider"></p>
 
 
 ## What GitHub Cannot Render
@@ -567,7 +567,7 @@ Before you try — these **do not work** in GitHub markdown:
 **The workaround for all color/visual needs: SVG files referenced via `<img>` or `<picture>`.** That's what this repo provides.
 
 
-<p align="center"><img src="templates/skins/renders/horizon-line.svg" width="680" alt="horizon-line"></p>
+<p align="center"><img src="templates/skins/renders/divider.svg" width="100%" alt="divider"></p>
 
 
 <p align="center">
