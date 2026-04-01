@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html>
+<head><meta charset="utf-8"><title>Turrell + Cloud + Y3K</title>
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@200;300;600;800;900&display=swap');
+*{margin:0;padding:0;box-sizing:border-box}
+.toggle{position:fixed;top:20px;right:20px;z-index:99;padding:8px 16px;border-radius:8px;border:1px solid #444;background:#222;color:#aaa;font-size:11px;cursor:pointer;font-family:monospace}
+body.bg-black{background:#000}
+body.bg-trans{background:transparent}
+body.bg-checker{background-image:repeating-conic-gradient(#808080 0% 25%,transparent 0% 50%);background-size:20px 20px;background-color:transparent}
+body{display:flex;flex-direction:column;gap:28px;align-items:center;justify-content:center;min-height:100vh;font-family:'Inter',sans-serif;padding:40px 0}
+.label{color:#555;font-size:9px;letter-spacing:5px;text-transform:uppercase;margin-bottom:-6px}
+.mood{color:#333;font-size:8px;letter-spacing:2px;font-style:italic;max-width:700px;text-align:center;margin-top:-18px}
+
+.pill-scene{position:relative;width:min(1400px,92vw);height:34px}
+.blob{position:absolute;border-radius:50%;filter:blur(34px)}
+
+.pill{
+  position:absolute;inset:0;border-radius:999px;
+  overflow:hidden;
+  box-shadow:inset 0 1px 0 rgba(255,255,255,0.12),inset 0 -1px 0 rgba(255,255,255,0.04),0 0 30px rgba(255,255,255,0.03);
+}
+.pill::before{
+  content:'';position:absolute;inset:-2px;border-radius:999px;padding:2px;
+  background:linear-gradient(155deg,rgba(255,255,255,0.65) 0%,rgba(255,255,255,0.20) 15%,rgba(255,255,255,0.04) 35%,rgba(255,255,255,0.02) 50%,rgba(255,255,255,0.04) 65%,rgba(255,255,255,0.25) 85%,rgba(255,255,255,0.55) 100%);
+  -webkit-mask:linear-gradient(#fff 0 0) content-box,linear-gradient(#fff 0 0);
+  -webkit-mask-composite:xor;mask-composite:exclude;
+}
+.pill::after{
+  content:'';position:absolute;top:0;left:2%;right:2%;height:72%;
+  border-radius:0 0 50% 50%/0 0 100% 100%;
+  background:linear-gradient(180deg,rgba(255,255,255,0.20) 0%,rgba(255,255,255,0.06) 25%,transparent 55%);
+  pointer-events:none;z-index:5;
+}
+
+/* Turrell aperture — the light source inside */
+.turrell{position:absolute;inset:0;border-radius:999px;z-index:1}
+/* Cloud atmosphere — volumetric layer on top */
+.cloud{position:absolute;inset:0;border-radius:999px;z-index:2}
+
+/* Bar */
+.bar-b{position:absolute;z-index:3;top:50%;left:1%;right:1%;transform:translateY(-50%);height:4px;border-radius:4px;filter:blur(6px);opacity:0.65}
+.bar-t{position:absolute;z-index:4;top:50%;left:1%;right:1%;transform:translateY(-50%);height:2px;border-radius:4px;opacity:0.92}
+
+.wm{position:absolute;z-index:6;bottom:8px;right:20px;font-size:5px;font-family:monospace;opacity:0.06;color:#fff}
+</style>
+</head>
+<body class="bg-black">
+<button class="toggle" onclick="const b=document.body;const m=['bg-black','bg-trans','bg-checker'];const i=m.findIndex(x=>b.classList.contains(x));b.classList.remove(...m);b.classList.add(m[(i+1)%3]);this.textContent=['Black','Transparent','Checker'][((i+1)%3)]">Black</button>
+
+<!-- 1. PLASMA VESICLE -->
+<div class="label">1 / PLASMA VESICLE</div>
+<div class="pill-scene">
+  <div class="blob" style="width:180px;height:180px;top:-80px;left:60px;background:rgba(255,45,240,0.35)"></div>
+  <div class="blob" style="width:160px;height:160px;top:-70px;right:100px;background:rgba(140,0,255,0.28)"></div>
+  <div class="blob" style="width:120px;height:120px;top:-50px;left:300px;background:rgba(60,0,120,0.22)"></div>
+  <div class="pill" style="background:#000"></div>
+  <div class="turrell" style="background:radial-gradient(ellipse at 50% 50%,#ff2df0 0%,#c400e8 12%,#7a00cc 28%,#3d0066 48%,#0a0014 72%,#000 100%)"></div>
+  <div class="cloud" style="background:radial-gradient(ellipse 180% 120% at 45% 55%,rgba(255,45,240,0.18) 0%,rgba(160,0,255,0.12) 25%,rgba(80,0,180,0.06) 50%,transparent 80%)"></div>
+  <div class="bar-b" style="background:linear-gradient(90deg,#00ffd5,#00e8c8,#00ccb8,#00a89e,#006855)"></div>
+  <div class="bar-t" style="background:linear-gradient(90deg,#00ffd5,#00e8c8,#00ccb8,#00a89e,#006855)"></div>
+  <div class="wm">KevQ</div>
+</div>
+<div class="mood">Bioluminescent jellyfish pulsing in a pressure-black trench</div>
+
+<!-- 2. SYNTH MERIDIAN -->
+<div class="label">2 / SYNTH MERIDIAN</div>
+<div class="pill-scene">
+  <div class="blob" style="width:180px;height:180px;top:-80px;left:80px;background:rgba(0,255,229,0.30)"></div>
+  <div class="blob" style="width:160px;height:160px;top:-70px;right:80px;background:rgba(0,160,200,0.24)"></div>
+  <div class="blob" style="width:130px;height:130px;top:-55px;left:320px;background:rgba(0,60,110,0.20)"></div>
+  <div class="pill" style="background:#000"></div>
+  <div class="turrell" style="background:radial-gradient(ellipse at 50% 50%,#00ffe5 0%,#00c4b8 10%,#0088a3 22%,#004d6d 40%,#001a2e 62%,#000 100%)"></div>
+  <div class="cloud" style="background:radial-gradient(ellipse 200% 140% at 55% 45%,rgba(0,255,229,0.14) 0%,rgba(0,180,200,0.10) 30%,rgba(0,80,140,0.05) 55%,transparent 85%)"></div>
+  <div class="bar-b" style="background:linear-gradient(90deg,#ff5588,#ff3070,#e81868,#cc0050,#880038)"></div>
+  <div class="bar-t" style="background:linear-gradient(90deg,#ff5588,#ff3070,#e81868,#cc0050,#880038)"></div>
+  <div class="wm">KevQ</div>
+</div>
+<div class="mood">Synthetic cyan decaying through surgical teal into oceanic black</div>
+
+<!-- 3. REACTOR BLOOM -->
+<div class="label">3 / REACTOR BLOOM</div>
+<div class="pill-scene">
+  <div class="blob" style="width:190px;height:190px;top:-85px;left:70px;background:rgba(255,238,0,0.32)"></div>
+  <div class="blob" style="width:170px;height:170px;top:-75px;right:90px;background:rgba(255,100,0,0.26)"></div>
+  <div class="blob" style="width:130px;height:130px;top:-55px;left:280px;background:rgba(180,20,0,0.20)"></div>
+  <div class="pill" style="background:#000"></div>
+  <div class="turrell" style="background:radial-gradient(ellipse at 50% 50%,#ffee00 0%,#ffb800 10%,#ff6a00 24%,#cc2200 42%,#5c0a00 64%,#000 100%)"></div>
+  <div class="cloud" style="background:radial-gradient(ellipse 160% 110% at 48% 52%,rgba(255,238,0,0.16) 0%,rgba(255,120,0,0.11) 28%,rgba(200,30,0,0.06) 52%,transparent 78%)"></div>
+  <div class="bar-b" style="background:linear-gradient(90deg,#00aaff,#0088ff,#0066ee,#0044cc,#002288)"></div>
+  <div class="bar-t" style="background:linear-gradient(90deg,#00aaff,#0088ff,#0066ee,#0044cc,#002288)"></div>
+  <div class="wm">KevQ</div>
+</div>
+<div class="mood">Nuclear yellow detonating through plasma orange into reactor-core crimson</div>
+
+<!-- 4. ABYSSAL SIGNAL -->
+<div class="label">4 / ABYSSAL SIGNAL</div>
+<div class="pill-scene">
+  <div class="blob" style="width:180px;height:180px;top:-80px;left:60px;background:rgba(77,255,180,0.33)"></div>
+  <div class="blob" style="width:150px;height:150px;top:-65px;right:100px;background:rgba(0,200,140,0.25)"></div>
+  <div class="blob" style="width:120px;height:120px;top:-50px;left:310px;background:rgba(0,90,70,0.19)"></div>
+  <div class="pill" style="background:#000"></div>
+  <div class="turrell" style="background:radial-gradient(ellipse at 50% 50%,#4dffb4 0%,#00e89c 11%,#00b87a 25%,#007a5c 42%,#002e22 63%,#000 100%)"></div>
+  <div class="cloud" style="background:radial-gradient(ellipse 190% 130% at 52% 48%,rgba(77,255,180,0.15) 0%,rgba(0,200,140,0.10) 28%,rgba(0,100,80,0.05) 54%,transparent 82%)"></div>
+  <div class="bar-b" style="background:linear-gradient(90deg,#ff4da0,#ff2888,#e01070,#bb0058,#780038)"></div>
+  <div class="bar-t" style="background:linear-gradient(90deg,#ff4da0,#ff2888,#e01070,#bb0058,#780038)"></div>
+  <div class="wm">KevQ</div>
+</div>
+<div class="mood">Deep-sea sonar ping caught in bioluminescent algae</div>
+
+<!-- 5. SYNAPTIC DISCHARGE -->
+<div class="label">5 / SYNAPTIC DISCHARGE</div>
+<div class="pill-scene">
+  <div class="blob" style="width:170px;height:170px;top:-75px;left:70px;background:rgba(0,255,204,0.35)"></div>
+  <div class="blob" style="width:160px;height:160px;top:-70px;right:90px;background:rgba(0,180,255,0.25)"></div>
+  <div class="blob" style="width:140px;height:140px;top:-60px;left:290px;background:rgba(26,0,102,0.40)"></div>
+  <div class="pill" style="background:#000"></div>
+  <div class="turrell" style="background:radial-gradient(ellipse 60% 100% at 50% 50%,#00ffcc 0%,#0affb3 8%,#00e5ff 20%,#006aff 40%,#1a0066 65%,#0a001a 85%,transparent 100%)"></div>
+  <div class="cloud" style="background:radial-gradient(ellipse 80% 120% at 45% 50%,rgba(0,255,170,0.12) 0%,rgba(0,180,255,0.06) 30%,rgba(10,0,40,0.15) 60%,transparent 100%)"></div>
+  <div class="bar-b" style="background:linear-gradient(90deg,#ffcc00,#ffaa00,#ff8800,#ff6600,#ee4400,#cc2200)"></div>
+  <div class="bar-t" style="background:linear-gradient(90deg,#ffcc00,#ffaa00,#ff8800,#ff6600,#ee4400,#cc2200)"></div>
+  <div class="wm">KevQ</div>
+</div>
+<div class="mood">Bioluminescent thought propagating through synthetic cerebrospinal fluid</div>
+
+<!-- 6. PLASMA LITURGY -->
+<div class="label">6 / PLASMA LITURGY</div>
+<div class="pill-scene">
+  <div class="blob" style="width:180px;height:180px;top:-80px;left:65px;background:rgba(255,0,229,0.30)"></div>
+  <div class="blob" style="width:155px;height:155px;top:-65px;right:95px;background:rgba(123,0,255,0.28)"></div>
+  <div class="blob" style="width:135px;height:135px;top:-55px;left:300px;background:rgba(45,0,163,0.40)"></div>
+  <div class="pill" style="background:#000"></div>
+  <div class="turrell" style="background:radial-gradient(ellipse 55% 100% at 50% 50%,#ff00e5 0%,#ff2aff 8%,#cc00ff 18%,#7b00ff 35%,#2d00a3 55%,#0d0033 75%,transparent 100%)"></div>
+  <div class="cloud" style="background:radial-gradient(ellipse 75% 110% at 55% 50%,rgba(255,0,229,0.10) 0%,rgba(123,0,255,0.08) 35%,rgba(13,0,51,0.18) 65%,transparent 100%)"></div>
+  <div class="bar-b" style="background:linear-gradient(90deg,#b8ff00,#99ee00,#77dd00,#55cc00,#33aa00,#228800)"></div>
+  <div class="bar-t" style="background:linear-gradient(90deg,#b8ff00,#99ee00,#77dd00,#55cc00,#33aa00,#228800)"></div>
+  <div class="wm">KevQ</div>
+</div>
+<div class="mood">The frequency emitted when dark matter collapses into consciousness</div>
+
+<!-- 7. XENOBIOME SIGNAL -->
+<div class="label">7 / XENOBIOME SIGNAL</div>
+<div class="pill-scene">
+  <div class="blob" style="width:175px;height:175px;top:-78px;left:75px;background:rgba(170,255,0,0.30)"></div>
+  <div class="blob" style="width:155px;height:155px;top:-65px;right:85px;background:rgba(0,255,136,0.25)"></div>
+  <div class="blob" style="width:130px;height:130px;top:-55px;left:310px;background:rgba(0,77,64,0.38)"></div>
+  <div class="pill" style="background:#000"></div>
+  <div class="turrell" style="background:radial-gradient(ellipse 58% 100% at 50% 50%,#ccff00 0%,#aaff00 8%,#66ff33 18%,#00ff88 35%,#00cc99 50%,#004d40 70%,#001a15 88%,transparent 100%)"></div>
+  <div class="cloud" style="background:radial-gradient(ellipse 70% 115% at 48% 50%,rgba(204,255,0,0.09) 0%,rgba(0,255,136,0.07) 30%,rgba(0,77,64,0.14) 55%,transparent 100%)"></div>
+  <div class="bar-b" style="background:linear-gradient(90deg,#ee00ff,#cc00dd,#aa00bb,#880099,#660077,#440055)"></div>
+  <div class="bar-t" style="background:linear-gradient(90deg,#ee00ff,#cc00dd,#aa00bb,#880099,#660077,#440055)"></div>
+  <div class="wm">KevQ</div>
+</div>
+<div class="mood">A chloroplast that learned to think</div>
+
+<!-- 8. UPLOAD HEMORRHAGE -->
+<div class="label">8 / UPLOAD HEMORRHAGE</div>
+<div class="pill-scene">
+  <div class="blob" style="width:180px;height:180px;top:-80px;left:60px;background:rgba(255,51,0,0.32)"></div>
+  <div class="blob" style="width:160px;height:160px;top:-70px;right:90px;background:rgba(255,0,136,0.28)"></div>
+  <div class="blob" style="width:140px;height:140px;top:-60px;left:280px;background:rgba(102,0,102,0.42)"></div>
+  <div class="pill" style="background:#000"></div>
+  <div class="turrell" style="background:radial-gradient(ellipse 57% 100% at 50% 50%,#ff3300 0%,#ff5500 8%,#ff0055 20%,#ff0088 35%,#cc00aa 50%,#660066 68%,#1a001a 85%,transparent 100%)"></div>
+  <div class="cloud" style="background:radial-gradient(ellipse 72% 108% at 52% 50%,rgba(255,51,0,0.11) 0%,rgba(255,0,85,0.08) 30%,rgba(102,0,102,0.16) 58%,transparent 100%)"></div>
+  <div class="bar-b" style="background:linear-gradient(90deg,#00ffee,#00ddcc,#00bbaa,#009988,#007766,#005544)"></div>
+  <div class="bar-t" style="background:linear-gradient(90deg,#00ffee,#00ddcc,#00bbaa,#009988,#007766,#005544)"></div>
+  <div class="wm">KevQ</div>
+</div>
+<div class="mood">Consciousness ripping itself in half, leaving arterial light where the seam tore</div>
+
+<!-- 9. SYNAPTIC AUREALIS -->
+<div class="label">9 / SYNAPTIC AUREALIS</div>
+<div class="pill-scene">
+  <div class="blob" style="width:175px;height:175px;top:-78px;left:70px;background:rgba(167,107,239,0.35)"></div>
+  <div class="blob" style="width:155px;height:155px;top:-65px;right:95px;background:rgba(123,60,207,0.28)"></div>
+  <div class="blob" style="width:130px;height:130px;top:-55px;left:300px;background:rgba(80,36,168,0.22)"></div>
+  <div class="pill" style="background:#000"></div>
+  <div class="turrell" style="background:radial-gradient(ellipse 55% 80% at 50% 50%,#e8d5ff 0%,#c9a0f7 8%,#a76bef 16%,#7b3ccf 25%,#5024a8 34%,#2d1278 44%,#1a0b52 55%,#160a3d 65%,#0f0a1f 82%,#060408 100%)"></div>
+  <div class="cloud" style="background:radial-gradient(ellipse 120% 60% at 50% 35%,rgba(178,120,255,0.18) 0%,rgba(100,60,200,0.12) 20%,rgba(45,18,120,0.08) 40%,rgba(22,10,61,0.04) 60%,transparent 80%)"></div>
+  <div class="bar-b" style="background:linear-gradient(90deg,#ffd080,#ffbb55,#ffa030,#ee8800,#cc6600)"></div>
+  <div class="bar-t" style="background:linear-gradient(90deg,#ffd080,#ffbb55,#ffa030,#ee8800,#cc6600)"></div>
+  <div class="wm">KevQ</div>
+</div>
+<div class="mood">The event horizon of a thought that hasn't been thought yet</div>
+
+<!-- 10. PELAGIC DRIFT -->
+<div class="label">10 / PELAGIC DRIFT</div>
+<div class="pill-scene">
+  <div class="blob" style="width:180px;height:180px;top:-80px;left:65px;background:rgba(61,217,203,0.32)"></div>
+  <div class="blob" style="width:160px;height:160px;top:-70px;right:90px;background:rgba(18,160,168,0.25)"></div>
+  <div class="blob" style="width:130px;height:130px;top:-55px;left:295px;background:rgba(8,94,120,0.20)"></div>
+  <div class="pill" style="background:#000"></div>
+  <div class="turrell" style="background:radial-gradient(ellipse 50% 85% at 50% 48%,#b8fff4 0%,#7af0e0 7%,#3dd9cb 14%,#1fbfb8 22%,#12a0a8 30%,#0b7e90 38%,#085e78 47%,#04374d 65%,#021e2e 80%,#00090f 100%)"></div>
+  <div class="cloud" style="background:radial-gradient(ellipse 110% 55% at 48% 40%,rgba(122,240,224,0.15) 0%,rgba(31,191,184,0.10) 22%,rgba(11,126,144,0.07) 42%,rgba(4,55,77,0.04) 62%,transparent 82%)"></div>
+  <div class="bar-b" style="background:linear-gradient(90deg,#ff8877,#ff6655,#ee4433,#cc2222,#aa1818,#881010)"></div>
+  <div class="bar-t" style="background:linear-gradient(90deg,#ff8877,#ff6655,#ee4433,#cc2222,#aa1818,#881010)"></div>
+  <div class="wm">KevQ</div>
+</div>
+<div class="mood">A deep-sea creature that has never seen sunlight but learned to generate it</div>
+
+</body>
+</html>

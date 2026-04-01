@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+<html>
+<head><meta charset="utf-8"><title>Experimental Styles</title>
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@200;300;600;800;900&display=swap');
+*{margin:0;padding:0;box-sizing:border-box}
+.toggle{position:fixed;top:20px;right:20px;z-index:99;padding:8px 16px;border-radius:8px;border:1px solid #444;background:#222;color:#aaa;font-size:11px;cursor:pointer;font-family:monospace}
+body.bg-black{background:#000}
+body.bg-trans{background:transparent}
+body.bg-checker{background-image:repeating-conic-gradient(#808080 0% 25%,transparent 0% 50%);background-size:20px 20px;background-color:transparent}
+body{display:flex;flex-direction:column;gap:28px;align-items:center;justify-content:center;min-height:100vh;font-family:'Inter',sans-serif;padding:40px 0}
+.label{color:#555;font-size:9px;letter-spacing:5px;text-transform:uppercase;margin-bottom:-6px}
+.mood{color:#333;font-size:8px;letter-spacing:2px;font-style:italic;max-width:700px;text-align:center;margin-top:-18px}
+.pill-scene{position:relative;width:min(1400px,92vw);height:34px}
+.blob{position:absolute;border-radius:50%;filter:blur(34px)}
+.pill{position:absolute;inset:0;border-radius:999px;overflow:hidden;box-shadow:inset 0 1px 0 rgba(255,255,255,0.12),inset 0 -1px 0 rgba(255,255,255,0.04),0 0 30px rgba(255,255,255,0.03)}
+.pill::before{content:'';position:absolute;inset:-2px;border-radius:999px;padding:2px;background:linear-gradient(155deg,rgba(255,255,255,0.65) 0%,rgba(255,255,255,0.20) 15%,rgba(255,255,255,0.04) 35%,rgba(255,255,255,0.02) 50%,rgba(255,255,255,0.04) 65%,rgba(255,255,255,0.25) 85%,rgba(255,255,255,0.55) 100%);-webkit-mask:linear-gradient(#fff 0 0) content-box,linear-gradient(#fff 0 0);-webkit-mask-composite:xor;mask-composite:exclude}
+.pill::after{content:'';position:absolute;top:0;left:2%;right:2%;height:72%;border-radius:0 0 50% 50%/0 0 100% 100%;background:linear-gradient(180deg,rgba(255,255,255,0.20) 0%,rgba(255,255,255,0.06) 25%,transparent 55%);pointer-events:none;z-index:5}
+.t{position:absolute;inset:0;border-radius:999px;z-index:1}
+.c{position:absolute;inset:0;border-radius:999px;z-index:2}
+.bb{position:absolute;z-index:3;top:50%;left:1%;right:1%;transform:translateY(-50%);height:4px;border-radius:4px;filter:blur(6px);opacity:0.65}
+.bt{position:absolute;z-index:4;top:50%;left:1%;right:1%;transform:translateY(-50%);height:2px;border-radius:4px;opacity:0.92}
+</style>
+</head>
+<body class="bg-black">
+<button class="toggle" onclick="const b=document.body;const m=['bg-black','bg-trans','bg-checker'];const i=m.findIndex(x=>b.classList.contains(x));b.classList.remove(...m);b.classList.add(m[(i+1)%3]);this.textContent=['Black','Transparent','Checker'][((i+1)%3)]">Black</button>
+
+<!-- 1. SPLIT FIELD — warm left, cold right, bar where they meet -->
+<div class="label">1 / SPLIT FIELD</div>
+<div class="pill-scene">
+  <div class="blob" style="width:200px;height:200px;top:-90px;left:30px;background:rgba(255,100,50,0.40)"></div>
+  <div class="blob" style="width:200px;height:200px;top:-90px;right:30px;background:rgba(50,100,255,0.40)"></div>
+  <div class="pill" style="background:#000"></div>
+  <div class="t" style="background:linear-gradient(90deg,#ff6432 0%,#ff4020 20%,#880044 50%,#2040ff 80%,#3264ff 100%)"></div>
+  <div class="c" style="background:radial-gradient(ellipse 40% 100% at 50% 50%,rgba(255,255,255,0.08) 0%,transparent 60%)"></div>
+  <div class="bb" style="background:linear-gradient(90deg,#ffcc88,#ffffff,#88ccff)"></div>
+  <div class="bt" style="background:linear-gradient(90deg,#ffcc88,#ffffff,#88ccff)"></div>
+</div>
+<div class="mood">Two temperatures meeting at the equator — the bar is the weather front</div>
+
+<!-- 2. DOUBLE APERTURE — two glows, left and right, darkness between -->
+<div class="label">2 / DOUBLE APERTURE</div>
+<div class="pill-scene">
+  <div class="blob" style="width:160px;height:160px;top:-70px;left:50px;background:rgba(255,0,200,0.35)"></div>
+  <div class="blob" style="width:160px;height:160px;top:-70px;right:50px;background:rgba(0,200,255,0.35)"></div>
+  <div class="pill" style="background:#000"></div>
+  <div class="t" style="background:radial-gradient(ellipse 30% 100% at 20% 50%,#ff00c8 0%,#880066 30%,transparent 60%),radial-gradient(ellipse 30% 100% at 80% 50%,#00c8ff 0%,#006688 30%,transparent 60%)"></div>
+  <div class="bb" style="background:linear-gradient(90deg,#ff00c8,#440044,#000,#004444,#00c8ff)"></div>
+  <div class="bt" style="background:linear-gradient(90deg,#ff00c8,#440044,#000,#004444,#00c8ff)"></div>
+</div>
+<div class="mood">Two portals in one tunnel — which one do you walk toward</div>
+
+<!-- 3. HORIZON LINE — gradient is top-to-bottom not radial, bar IS the horizon -->
+<div class="label">3 / HORIZON LINE</div>
+<div class="pill-scene">
+  <div class="blob" style="width:300px;height:120px;top:-60px;left:200px;background:rgba(255,140,60,0.30)"></div>
+  <div class="pill" style="background:#000"></div>
+  <div class="t" style="background:linear-gradient(180deg,#001428 0%,#002855 25%,#1a4480 40%,#ff8c3c 48%,#ffaa55 50%,#ff8c3c 52%,#883318 60%,#331108 75%,#000 100%)"></div>
+  <div class="bb" style="background:linear-gradient(90deg,#ffaa55,#ff8c3c,#ff6622,#ff8c3c,#ffaa55)"></div>
+  <div class="bt" style="background:linear-gradient(90deg,#ffcc88,#ffaa55,#ff8c3c,#ffaa55,#ffcc88)"></div>
+</div>
+<div class="mood">Sunset compressed into a slit — the entire sky in 34 pixels</div>
+
+<!-- 4. INTERFERENCE — two overlapping radials creating moiré-like bands -->
+<div class="label">4 / INTERFERENCE</div>
+<div class="pill-scene">
+  <div class="blob" style="width:180px;height:180px;top:-80px;left:100px;background:rgba(0,255,150,0.30)"></div>
+  <div class="blob" style="width:180px;height:180px;top:-80px;right:100px;background:rgba(255,0,150,0.30)"></div>
+  <div class="pill" style="background:#000"></div>
+  <div class="t" style="background:radial-gradient(ellipse 50% 100% at 35% 50%,rgba(0,255,150,0.25) 0%,transparent 50%),radial-gradient(ellipse 50% 100% at 65% 50%,rgba(255,0,150,0.25) 0%,transparent 50%)"></div>
+  <div class="c" style="background:radial-gradient(ellipse 30% 100% at 50% 50%,rgba(255,255,255,0.06) 0%,transparent 50%)"></div>
+  <div class="bb" style="background:linear-gradient(90deg,#00ff96,#88ffcc,#ffffff,#ff88cc,#ff0096)"></div>
+  <div class="bt" style="background:linear-gradient(90deg,#00ff96,#88ffcc,#ffffff,#ff88cc,#ff0096)"></div>
+</div>
+<div class="mood">Two frequencies overlapping — constructive interference at the center</div>
+
+<!-- 5. VOID SLIT — almost entirely black, thin bright line is the only light -->
+<div class="label">5 / VOID SLIT</div>
+<div class="pill-scene">
+  <div class="pill" style="background:#000"></div>
+  <div class="t" style="background:radial-gradient(ellipse 100% 30% at 50% 50%,rgba(255,255,255,0.03) 0%,transparent 50%)"></div>
+  <div class="bb" style="background:linear-gradient(90deg,transparent 5%,#ffffff 30%,#ffffff 70%,transparent 95%);opacity:0.40"></div>
+  <div class="bt" style="background:linear-gradient(90deg,transparent 5%,#ffffff 30%,#ffffff 70%,transparent 95%);opacity:0.90"></div>
+</div>
+<div class="mood">Darkness is the material — the line of light is the cut</div>
+
+<!-- 6. CHROMATIC STACK — three distinct color bands stacked vertically inside the pill -->
+<div class="label">6 / CHROMATIC STACK</div>
+<div class="pill-scene">
+  <div class="blob" style="width:200px;height:200px;top:-90px;left:80px;background:rgba(255,50,80,0.25)"></div>
+  <div class="blob" style="width:200px;height:200px;top:-90px;right:80px;background:rgba(50,80,255,0.25)"></div>
+  <div class="pill" style="background:#000"></div>
+  <div class="t" style="background:linear-gradient(180deg,rgba(255,50,80,0.20) 0%,rgba(255,50,80,0.12) 30%,transparent 35%,transparent 45%,rgba(50,255,180,0.12) 50%,transparent 55%,transparent 65%,rgba(50,80,255,0.12) 70%,rgba(50,80,255,0.20) 100%)"></div>
+  <div class="bb" style="background:linear-gradient(90deg,#32ffb4,#50ffc8,#88ffdd,#50ffc8,#32ffb4)"></div>
+  <div class="bt" style="background:linear-gradient(90deg,#32ffb4,#50ffc8,#88ffdd,#50ffc8,#32ffb4)"></div>
+</div>
+<div class="mood">RGB separated by prism — the bar is the green wavelength</div>
+
+<!-- 7. SCATTER — many tiny blobs creating a particle field behind glass -->
+<div class="label">7 / SCATTER</div>
+<div class="pill-scene">
+  <div class="blob" style="width:60px;height:60px;top:-25px;left:40px;background:rgba(255,0,200,0.50)"></div>
+  <div class="blob" style="width:50px;height:50px;top:-20px;left:150px;background:rgba(0,255,200,0.45)"></div>
+  <div class="blob" style="width:70px;height:70px;top:-30px;left:280px;background:rgba(255,200,0,0.40)"></div>
+  <div class="blob" style="width:55px;height:55px;top:-22px;left:420px;background:rgba(200,0,255,0.45)"></div>
+  <div class="blob" style="width:65px;height:65px;top:-28px;left:560px;background:rgba(0,200,255,0.42)"></div>
+  <div class="blob" style="width:50px;height:50px;top:-20px;left:700px;background:rgba(255,100,50,0.48)"></div>
+  <div class="blob" style="width:60px;height:60px;top:-25px;left:850px;background:rgba(50,255,100,0.40)"></div>
+  <div class="blob" style="width:55px;height:55px;top:-22px;left:1000px;background:rgba(255,50,100,0.45)"></div>
+  <div class="blob" style="width:65px;height:65px;top:-28px;left:1150px;background:rgba(100,50,255,0.42)"></div>
+  <div class="pill" style="background:rgba(255,255,255,0.04)"></div>
+  <div class="bb" style="background:linear-gradient(90deg,#ff00c8,#00ffc8,#ffc800,#c800ff,#00c8ff,#ff6432,#32ff64,#ff3264,#6432ff)"></div>
+  <div class="bt" style="background:linear-gradient(90deg,#ff00c8,#00ffc8,#ffc800,#c800ff,#00c8ff,#ff6432,#32ff64,#ff3264,#6432ff)"></div>
+</div>
+<div class="mood">A particle accelerator smeared across glass — every dot is a different collision</div>
+
+<!-- 8. DEEP MONOCHROME — single color, multiple opacities creating depth -->
+<div class="label">8 / DEEP MONOCHROME</div>
+<div class="pill-scene">
+  <div class="blob" style="width:200px;height:200px;top:-90px;left:60px;background:rgba(0,100,255,0.40)"></div>
+  <div class="blob" style="width:180px;height:180px;top:-80px;right:80px;background:rgba(0,80,220,0.30)"></div>
+  <div class="blob" style="width:150px;height:150px;top:-65px;left:300px;background:rgba(0,60,180,0.22)"></div>
+  <div class="pill" style="background:#000"></div>
+  <div class="t" style="background:radial-gradient(ellipse at 50% 50%,#0066ff 0%,#0055dd 10%,#0044bb 20%,#003399 32%,#002277 45%,#001155 60%,#000a33 78%,#000 100%)"></div>
+  <div class="c" style="background:radial-gradient(ellipse 140% 100% at 50% 50%,rgba(0,100,255,0.10) 0%,transparent 50%)"></div>
+  <div class="bb" style="background:linear-gradient(90deg,#0044bb,#0066ff,#3388ff,#0066ff,#0044bb)"></div>
+  <div class="bt" style="background:linear-gradient(90deg,#0044bb,#0066ff,#3388ff,#0066ff,#0044bb)"></div>
+</div>
+<div class="mood">Klein blue compressed to its darkest and brightest — one hue, infinite depth</div>
+
+<!-- 9. BRUISE — uncomfortable colors, beauty in the wrong palette -->
+<div class="label">9 / BRUISE</div>
+<div class="pill-scene">
+  <div class="blob" style="width:190px;height:190px;top:-85px;left:70px;background:rgba(90,40,100,0.40)"></div>
+  <div class="blob" style="width:170px;height:170px;top:-75px;right:90px;background:rgba(60,80,30,0.30)"></div>
+  <div class="blob" style="width:140px;height:140px;top:-60px;left:300px;background:rgba(150,100,40,0.25)"></div>
+  <div class="pill" style="background:#000"></div>
+  <div class="t" style="background:radial-gradient(ellipse at 50% 50%,#9a6428 0%,#7a4060 12%,#5a2864 28%,#3a1848 45%,#1a0c28 68%,#000 100%)"></div>
+  <div class="c" style="background:radial-gradient(ellipse 160% 120% at 45% 55%,rgba(150,100,40,0.12) 0%,rgba(90,40,100,0.08) 30%,transparent 60%)"></div>
+  <div class="bb" style="background:linear-gradient(90deg,#c88840,#9a6428,#7a4060,#5a2864,#3a5020)"></div>
+  <div class="bt" style="background:linear-gradient(90deg,#c88840,#9a6428,#7a4060,#5a2864,#3a5020)"></div>
+</div>
+<div class="mood">Yellow-green and purple-brown — the colors skin makes when it's healing</div>
+
+<!-- 10. OVEREXPOSED — washed out, blown highlights, almost too bright -->
+<div class="label">10 / OVEREXPOSED</div>
+<div class="pill-scene">
+  <div class="blob" style="width:250px;height:250px;top:-110px;left:100px;background:rgba(255,220,240,0.50)"></div>
+  <div class="blob" style="width:220px;height:220px;top:-100px;right:100px;background:rgba(220,240,255,0.45)"></div>
+  <div class="pill" style="background:rgba(255,255,255,0.15)"></div>
+  <div class="t" style="background:radial-gradient(ellipse at 50% 50%,rgba(255,255,255,0.30) 0%,rgba(255,230,245,0.22) 20%,rgba(240,220,255,0.15) 40%,rgba(200,180,220,0.08) 60%,rgba(100,80,120,0.04) 80%,transparent 100%)"></div>
+  <div class="bb" style="background:linear-gradient(90deg,#ffdcf0,#ffffff,#dcf0ff,#ffffff,#ffdcf0);opacity:0.50"></div>
+  <div class="bt" style="background:linear-gradient(90deg,#ffdcf0,#ffffff,#dcf0ff,#ffffff,#ffdcf0);opacity:0.80"></div>
+</div>
+<div class="mood">Film left in the sun — beauty at the edge of destruction</div>
+
+<!-- 11. STATIC — no gradient at all, just noise-like speckled blobs -->
+<div class="label">11 / STATIC</div>
+<div class="pill-scene">
+  <div class="blob" style="width:40px;height:40px;top:-15px;left:20px;background:rgba(255,255,255,0.60);filter:blur(15px)"></div>
+  <div class="blob" style="width:35px;height:35px;top:-12px;left:100px;background:rgba(255,255,255,0.50);filter:blur(12px)"></div>
+  <div class="blob" style="width:45px;height:45px;top:-18px;left:200px;background:rgba(255,255,255,0.55);filter:blur(18px)"></div>
+  <div class="blob" style="width:38px;height:38px;top:-14px;left:320px;background:rgba(255,255,255,0.48);filter:blur(14px)"></div>
+  <div class="blob" style="width:42px;height:42px;top:-16px;left:440px;background:rgba(255,255,255,0.52);filter:blur(16px)"></div>
+  <div class="blob" style="width:36px;height:36px;top:-13px;left:560px;background:rgba(255,255,255,0.45);filter:blur(13px)"></div>
+  <div class="blob" style="width:44px;height:44px;top:-17px;left:680px;background:rgba(255,255,255,0.58);filter:blur(17px)"></div>
+  <div class="blob" style="width:40px;height:40px;top:-15px;left:800px;background:rgba(255,255,255,0.50);filter:blur(15px)"></div>
+  <div class="blob" style="width:38px;height:38px;top:-14px;left:920px;background:rgba(255,255,255,0.46);filter:blur(14px)"></div>
+  <div class="blob" style="width:42px;height:42px;top:-16px;left:1050px;background:rgba(255,255,255,0.54);filter:blur(16px)"></div>
+  <div class="blob" style="width:36px;height:36px;top:-13px;left:1180px;background:rgba(255,255,255,0.48);filter:blur(13px)"></div>
+  <div class="pill" style="background:rgba(255,255,255,0.03)"></div>
+  <div class="bb" style="background:linear-gradient(90deg,#888,#aaa,#fff,#aaa,#888);opacity:0.30"></div>
+  <div class="bt" style="background:linear-gradient(90deg,#888,#aaa,#fff,#aaa,#888);opacity:0.60"></div>
+</div>
+<div class="mood">Dead channel — the glass is showing you nothing and everything</div>
+
+<!-- 12. THERMAL — infrared false color -->
+<div class="label">12 / THERMAL</div>
+<div class="pill-scene">
+  <div class="blob" style="width:180px;height:180px;top:-80px;left:60px;background:rgba(255,255,0,0.35)"></div>
+  <div class="blob" style="width:160px;height:160px;top:-70px;right:80px;background:rgba(255,0,0,0.28)"></div>
+  <div class="blob" style="width:130px;height:130px;top:-55px;left:300px;background:rgba(0,0,180,0.25)"></div>
+  <div class="pill" style="background:#000"></div>
+  <div class="t" style="background:radial-gradient(ellipse at 50% 50%,#ffffff 0%,#ffff00 8%,#ff8800 18%,#ff0000 30%,#cc0044 42%,#660088 56%,#0000aa 72%,#000044 88%,#000 100%)"></div>
+  <div class="bb" style="background:linear-gradient(90deg,#0000aa,#660088,#ff0000,#ffff00,#ffffff)"></div>
+  <div class="bt" style="background:linear-gradient(90deg,#0000aa,#660088,#ff0000,#ffff00,#ffffff)"></div>
+</div>
+<div class="mood">FLIR camera pointed at a thought — white hot center, blue cold edges</div>
+
+<!-- 13. OIL SLICK — iridescent, all colors at once -->
+<div class="label">13 / OIL SLICK</div>
+<div class="pill-scene">
+  <div class="blob" style="width:170px;height:170px;top:-75px;left:50px;background:rgba(180,0,255,0.30)"></div>
+  <div class="blob" style="width:160px;height:160px;top:-70px;left:250px;background:rgba(0,255,180,0.25)"></div>
+  <div class="blob" style="width:170px;height:170px;top:-75px;right:50px;background:rgba(255,120,0,0.30)"></div>
+  <div class="pill" style="background:#000"></div>
+  <div class="t" style="background:linear-gradient(95deg,rgba(180,0,255,0.20) 0%,rgba(0,100,255,0.18) 20%,rgba(0,255,180,0.16) 40%,rgba(255,255,0,0.14) 55%,rgba(255,120,0,0.16) 70%,rgba(255,0,80,0.18) 85%,rgba(180,0,255,0.20) 100%)"></div>
+  <div class="bb" style="background:linear-gradient(90deg,#b400ff,#0064ff,#00ffb4,#ffff00,#ff7800,#ff0050,#b400ff)"></div>
+  <div class="bt" style="background:linear-gradient(90deg,#b400ff,#0064ff,#00ffb4,#ffff00,#ff7800,#ff0050,#b400ff)"></div>
+</div>
+<div class="mood">Gasoline rainbow on wet asphalt — every angle shows a different color</div>
+
+<!-- 14. NEGATIVE — inverted logic, bright pill on dark, bar is dark on bright -->
+<div class="label">14 / NEGATIVE</div>
+<div class="pill-scene">
+  <div class="blob" style="width:250px;height:250px;top:-110px;left:80px;background:rgba(200,180,255,0.40)"></div>
+  <div class="blob" style="width:220px;height:220px;top:-100px;right:80px;background:rgba(180,255,200,0.35)"></div>
+  <div class="pill" style="background:rgba(255,255,255,0.12)"></div>
+  <div class="t" style="background:radial-gradient(ellipse at 50% 50%,rgba(255,255,255,0.18) 0%,rgba(230,220,255,0.12) 25%,rgba(200,190,230,0.06) 50%,transparent 75%)"></div>
+  <div class="bb" style="background:linear-gradient(90deg,#1a0033,#000a1a,#001a0a,#000a1a,#1a0033);opacity:0.80"></div>
+  <div class="bt" style="background:linear-gradient(90deg,#1a0033,#000a1a,#001a0a,#000a1a,#1a0033);opacity:0.95"></div>
+</div>
+<div class="mood">Photo negative — the dark line cuts through light instead of light cutting through dark</div>
+
+<!-- 15. PULSE — bright center point, everything else barely visible -->
+<div class="label">15 / PULSE</div>
+<div class="pill-scene">
+  <div class="blob" style="width:100px;height:100px;top:-40px;left:50%;margin-left:-50px;background:rgba(255,100,200,0.50)"></div>
+  <div class="pill" style="background:#000"></div>
+  <div class="t" style="background:radial-gradient(ellipse 15% 100% at 50% 50%,#ff64c8 0%,#cc3290 15%,#661848 30%,#220a18 50%,#000 70%)"></div>
+  <div class="bb" style="background:radial-gradient(ellipse 20% 100% at 50% 50%,#ff64c8 0%,transparent 60%);filter:blur(8px);opacity:0.40"></div>
+  <div class="bt" style="background:radial-gradient(ellipse 15% 100% at 50% 50%,#ff64c8 0%,transparent 50%);filter:blur(2px);opacity:0.80"></div>
+</div>
+<div class="mood">A heartbeat — one bright point in all that darkness</div>
+
+</body>
+</html>
