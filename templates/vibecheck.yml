@@ -1,6 +1,6 @@
 # vibecheck — AI slop detection for PRs
 # Add this file to .github/workflows/ in your repo.
-# Docs: https://github.com/qinnovates/crazy-slop-stopper
+# Docs: https://github.com/qinnovates/vibecheck-slop-stopper
 
 name: vibecheck
 
@@ -17,7 +17,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
-      - uses: qinnovates/crazy-slop-stopper@main
+      - uses: qinnovates/vibecheck-slop-stopper@main
         # with:
         #   severity: medium      # low | medium | high | critical
         #   category: ""          # ai-slop,pseudocode,security (comma-separated)
