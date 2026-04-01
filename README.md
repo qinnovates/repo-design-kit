@@ -2,7 +2,7 @@
   <picture>
     <source media="(prefers-color-scheme: dark)" srcset="docs/assets/header-dark.svg">
     <source media="(prefers-color-scheme: light)" srcset="docs/assets/header-light.svg">
-    <img alt="Repo Design Kit" src="docs/assets/header-dark.svg" width="700">
+    <img alt="Repo Design Kit" src="docs/assets/header-dark.svg" width="400">
   </picture>
 </p>
 
