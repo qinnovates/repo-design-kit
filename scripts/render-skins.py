@@ -105,7 +105,7 @@ EXPERIMENTAL_SKINS = [
 
 def turrell_to_svg(skin: dict) -> str:
     """Generate SVG for a Turrell skin."""
-    w, h = 680, 28
+    w, h = 900, 12
     name = skin["name"]
 
     # Build radial gradient stops for turrell layer
@@ -175,7 +175,7 @@ def turrell_to_svg(skin: dict) -> str:
 
 def experimental_bar_svg(skin: dict) -> str:
     """Generate simple bar SVG for experimental skins."""
-    w, h = 680, 28
+    w, h = 900, 12
     bar = skin["bar"]
     bar_stops = "\n".join(
         f'      <stop offset="{int(i/(max(len(bar)-1,1))*100)}%" stop-color="{c}"/>'
