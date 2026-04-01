@@ -13,7 +13,9 @@
   <img src="https://img.shields.io/badge/skins-25-FF9F0A?style=flat-square" alt="Skins">
 </p>
 
----
+
+<p align="center"><img src="templates/skins/renders/plasma-vesicle.svg" width="680" alt="plasma-vesicle"></p>
+
 
 > [!TIP]
 > Copy the `docs/assets/` folder and `README.md` template into your repo. Pick a gradient. Push. Done.
@@ -24,7 +26,9 @@ A collection of **SVG header skins**, **Mermaid diagram color palettes**, and **
 
 No build tools. No dependencies. Just SVG files and markdown.
 
----
+
+<p align="center"><img src="templates/skins/renders/synth-meridian.svg" width="680" alt="synth-meridian"></p>
+
 
 ## Before & After
 
@@ -48,7 +52,9 @@ graph LR
     style F fill:#FF9F0A,stroke:#C77800,color:#000
 ```
 
----
+
+<p align="center"><img src="templates/skins/renders/reactor-bloom.svg" width="680" alt="reactor-bloom"></p>
+
 
 ## Table of Contents
 
@@ -59,7 +65,9 @@ graph LR
 - [Full Template](#full-template)
 - [Included Files](#included-files)
 
----
+
+<p align="center"><img src="templates/skins/renders/abyssal-signal.svg" width="680" alt="abyssal-signal"></p>
+
 
 ## Quick Start
 
@@ -85,7 +93,9 @@ cp repo-skin/templates/README.template.md your-project/README.md
 
 **4. Push.** GitHub renders everything automatically.
 
----
+
+<p align="center"><img src="templates/skins/renders/synaptic-discharge.svg" width="680" alt="synaptic-discharge"></p>
+
 
 ## Skins — 25 Options
 
@@ -132,7 +142,9 @@ Structural gradient techniques — not just color swaps.
 
 > Preview all skins locally: open `templates/skins/preview/turrell-cloud.html` or `experimental.html` in a browser. Toggle button cycles black / transparent / checker backgrounds.
 
----
+
+<p align="center"><img src="templates/skins/renders/plasma-liturgy.svg" width="680" alt="plasma-liturgy"></p>
+
 
 ## Dynamic Features
 
@@ -278,7 +290,9 @@ $$
 
 $$\sum_{i=1}^{n} x_i = x_1 + x_2 + \cdots + x_n$$
 
----
+
+<p align="center"><img src="templates/skins/renders/xenobiome-signal.svg" width="680" alt="xenobiome-signal"></p>
+
 
 ## Mermaid Color Palettes
 
@@ -405,7 +419,9 @@ Use this style block in any Mermaid diagram for consistent Neo colors:
     style NodeH fill:#FFD60A,stroke:#C77800,color:#000
 ```
 
----
+
+<p align="center"><img src="templates/skins/renders/upload-hemorrhage.svg" width="680" alt="upload-hemorrhage"></p>
+
 
 ## Full Template
 
@@ -426,7 +442,9 @@ Use this style block in any Mermaid diagram for consistent Neo colors:
   <img src="https://img.shields.io/badge/language-rust-BF5AF2?style=flat-square">
 </p>
 
----
+
+<p align="center"><img src="templates/skins/renders/synaptic-aurealis.svg" width="680" alt="synaptic-aurealis"></p>
+
 
 > [!TIP]
 > One-line quick start instruction here.
@@ -489,14 +507,18 @@ graph TD
 
 [MIT](LICENSE.md)
 
----
+
+<p align="center"><img src="templates/skins/renders/pelagic-drift.svg" width="680" alt="pelagic-drift"></p>
+
 
 <p align="center">Built by <a href="https://github.com/USER">You</a></p>
 ```
 
 </details>
 
----
+
+<p align="center"><img src="templates/skins/renders/split-field.svg" width="680" alt="split-field"></p>
+
 
 ## Included Files
 
@@ -522,7 +544,9 @@ repo-design-kit/
 └── README.md                        # This file
 ```
 
----
+
+<p align="center"><img src="templates/skins/renders/double-aperture.svg" width="680" alt="double-aperture"></p>
+
 
 ## What GitHub Cannot Render
 
@@ -542,7 +566,9 @@ Before you try — these **do not work** in GitHub markdown:
 
 **The workaround for all color/visual needs: SVG files referenced via `<img>` or `<picture>`.** That's what this repo provides.
 
----
+
+<p align="center"><img src="templates/skins/renders/horizon-line.svg" width="680" alt="horizon-line"></p>
+
 
 <p align="center">
   Built by <a href="https://github.com/qinnovates">Qinnovate</a>
