@@ -1,86 +1,93 @@
-<svg xmlns="http://www.w3.org/2000/svg" width="700" height="200" viewBox="0 0 700 200">
+<svg xmlns="http://www.w3.org/2000/svg" width="700" height="120" viewBox="0 0 700 120">
   <defs>
-    <linearGradient id="titleGrad" x1="0%" y1="0%" x2="100%" y2="0%">
-  <stop offset="0%" stop-color="#E8E8E8"/>
-  <stop offset="50%" stop-color="#FFFFFF"/>
-  <stop offset="100%" stop-color="#E8E8E8"/>
-</linearGradient>
-    <linearGradient id="lightBar" x1="0%" y1="0%" x2="100%" y2="0%">
-  <stop offset="0%" stop-color="#E0E0E0"/>
-  <stop offset="50%" stop-color="#FFFFFF"/>
-  <stop offset="100%" stop-color="#E0E0E0"/>
-</linearGradient>
+    <!-- Turrell aperture — soft 2-color radial, warm peach into deep indigo -->
+    <radialGradient id="turrell" cx="50%" cy="50%" r="60%" fx="50%" fy="50%">
+      <stop offset="0%" stop-color="#e8a87c" stop-opacity="0.22"/>
+      <stop offset="35%" stop-color="#c27a5c" stop-opacity="0.14"/>
+      <stop offset="65%" stop-color="#4a3070" stop-opacity="0.08"/>
+      <stop offset="100%" stop-color="#1a1030" stop-opacity="0.03"/>
+    </radialGradient>
 
-    <!-- Glass frost filter -->
-    <filter id="glassFrost" x="-10%" y="-10%" width="120%" height="120%">
-      <feGaussianBlur in="SourceGraphic" stdDeviation="12" result="blur"/>
-      <feFlood flood-color="rgba(255,255,255,0.04)" result="fill"/>
-      <feComposite in="fill" in2="blur" operator="in" result="frosted"/>
-      <feComposite in="frosted" in2="SourceGraphic" operator="over"/>
-    </filter>
-
-    <!-- Light bar glow -->
-    <filter id="lightGlow" x="-20%" y="-200%" width="140%" height="600%">
-      <feGaussianBlur stdDeviation="8" result="glow"/>
-      <feMerge>
-        <feMergeNode in="glow"/>
-        <feMergeNode in="glow"/>
-        <feMergeNode in="SourceGraphic"/>
-      </feMerge>
-    </filter>
-
-    <!-- Title glow -->
-    <filter id="titleGlow" x="-5%" y="-20%" width="110%" height="140%">
-      <feGaussianBlur stdDeviation="3" result="glow"/>
-      <feMerge>
-        <feMergeNode in="glow"/>
-        <feMergeNode in="SourceGraphic"/>
-      </feMerge>
-    </filter>
-
-    <!-- Inner highlight on glass -->
-    <linearGradient id="innerHighlight" x1="0%" y1="0%" x2="0%" y2="100%">
-      <stop offset="0%" stop-color="white" stop-opacity="0.08"/>
-      <stop offset="50%" stop-color="white" stop-opacity="0.01"/>
-      <stop offset="100%" stop-color="white" stop-opacity="0.04"/>
+    <!-- Chrome rim gradient -->
+    <linearGradient id="rim" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="white" stop-opacity="0.50"/>
+      <stop offset="15%" stop-color="white" stop-opacity="0.15"/>
+      <stop offset="35%" stop-color="white" stop-opacity="0.03"/>
+      <stop offset="50%" stop-color="white" stop-opacity="0.02"/>
+      <stop offset="65%" stop-color="white" stop-opacity="0.03"/>
+      <stop offset="85%" stop-color="white" stop-opacity="0.18"/>
+      <stop offset="100%" stop-color="white" stop-opacity="0.40"/>
     </linearGradient>
+
+    <!-- Specular top highlight -->
+    <linearGradient id="spec" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="white" stop-opacity="0.18"/>
+      <stop offset="40%" stop-color="white" stop-opacity="0.04"/>
+      <stop offset="100%" stop-color="white" stop-opacity="0"/>
+    </linearGradient>
+
+    <!-- Title gradient — warm to cool -->
+    <linearGradient id="titleGrad" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#f0c8a0"/>
+      <stop offset="30%" stop-color="#e8b090"/>
+      <stop offset="50%" stop-color="#c8a0d0"/>
+      <stop offset="70%" stop-color="#a090c8"/>
+      <stop offset="100%" stop-color="#8878b8"/>
+    </linearGradient>
+
+    <!-- Bar gradient -->
+    <linearGradient id="barGrad" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#e8a87c"/>
+      <stop offset="50%" stop-color="#c090b0"/>
+      <stop offset="100%" stop-color="#6858a0"/>
+    </linearGradient>
+
+    <!-- Glow filters -->
+    <filter id="barGlow">
+      <feGaussianBlur stdDeviation="4" result="g"/>
+      <feMerge><feMergeNode in="g"/><feMergeNode in="SourceGraphic"/></feMerge>
+    </filter>
+    <filter id="titleGlow">
+      <feGaussianBlur stdDeviation="2" result="g"/>
+      <feMerge><feMergeNode in="g"/><feMergeNode in="SourceGraphic"/></feMerge>
+    </filter>
   </defs>
 
-  <!-- Glass panel -->
-  <rect x="20" y="16" width="660" height="168"
-        rx="24" ry="24"
-        fill="rgba(255,255,255,0.04)"
-        stroke="rgba(255,255,255,0.12)" stroke-width="1"/>
+  <!-- Pill background — dark -->
+  <rect x="10" y="8" width="680" height="104" rx="52" ry="52" fill="#08060e"/>
 
-  <!-- Inner highlight layer -->
-  <rect x="20" y="16" width="660" height="168"
-        rx="24" ry="24"
-        fill="url(#innerHighlight)"/>
+  <!-- Turrell glow inside pill -->
+  <rect x="10" y="8" width="680" height="104" rx="52" ry="52" fill="url(#turrell)"/>
 
-  <!-- Light bar (Turrell-inspired) -->
-  <rect x="44" y="20" width="612" height="5"
-        rx="2.5" ry="2.5"
-        fill="url(#lightBar)" opacity="0.6"
-        filter="url(#lightGlow)"/>
+  <!-- Chrome rim -->
+  <rect x="10" y="8" width="680" height="104" rx="52" ry="52"
+        fill="none" stroke="url(#rim)" stroke-width="1.5"/>
+
+  <!-- Specular top arc -->
+  <rect x="40" y="8" width="620" height="52" rx="26" ry="26" fill="url(#spec)"/>
+
+  <!-- Center bar — base glow -->
+  <rect x="30" y="55" width="640" height="3" rx="1.5" ry="1.5"
+        fill="url(#barGrad)" opacity="0.40" filter="url(#barGlow)"/>
+
+  <!-- Center bar — sharp core -->
+  <rect x="30" y="56" width="640" height="1.5" rx="0.75" ry="0.75"
+        fill="url(#barGrad)" opacity="0.70"/>
 
   <!-- Title -->
-  <text x="350.0" y="86.56"
-        font-family="'SF Pro Display', 'Inter', 'Helvetica Neue', 'Segoe UI', sans-serif"
-        font-size="28" font-weight="200"
+  <text x="350" y="56"
+        font-family="'SF Pro Display','Inter','Helvetica Neue',sans-serif"
+        font-size="30" font-weight="800" letter-spacing="6"
         fill="url(#titleGrad)" text-anchor="middle"
-        letter-spacing="12"
         filter="url(#titleGlow)">REPO DESIGN KIT</text>
 
   <!-- Tagline -->
-  <text x="350.0" y="114.56"
-        font-family="'SF Pro Text', 'Inter', 'Helvetica Neue', sans-serif"
-        font-size="11" font-weight="300"
-        fill="#636366" text-anchor="middle"
-        letter-spacing="1.5">Neo-Y2K Futurism. Liquid glass headers. One command.</text>
+  <text x="350" y="78"
+        font-family="'SF Pro Text','Inter','Helvetica Neue',sans-serif"
+        font-size="9" font-weight="300" letter-spacing="2"
+        fill="#8878b8" fill-opacity="0.5" text-anchor="middle">25 skins. Liquid glass. One command.</text>
 
   <!-- Watermark -->
-  <text x="668" y="176"
-        font-family="monospace" font-size="3.5"
-        fill="#FFFFFF" opacity="0.08"
-        text-anchor="end">KevQ</text>
+  <text x="678" y="104" font-family="monospace" font-size="3"
+        fill="white" opacity="0.05" text-anchor="end">KevQ</text>
 </svg>
