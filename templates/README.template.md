@@ -1,69 +1,80 @@
 <!--
-  README TEMPLATE — repo-design-kit
+  beautiful-basic-template — repo-design-kit
 
   Instructions:
   1. Replace PROJECT_NAME, USER, REPO, LANGUAGE, VERSION throughout
-  2. Edit docs/assets/header-dark.svg and header-light.svg with your project name
-  3. Pick a gradient from templates/skins/SKINS.md
-  4. Choose your variant sections (library / tool / application)
-  5. Delete this comment block and any variant sections you don't use
+  2. Pick a skin from templates/skins/SKINS.md — use its hex codes for badges
+  3. Choose your variant (library / tool / application) — delete the others
+  4. Delete this comment block when done
+
+  No SVGs needed. No design files. Just markdown + shields.io badge colors.
+
+  AI DOCUMENTATION GUIDE:
+  If you are an AI assistant filling in this template, follow these rules:
+
+  DO:
+  - Describe what the project ACTUALLY DOES in concrete terms
+  - Use the project's real file names, real commands, real output
+  - State the differentiator with proof (benchmark, code sample, comparison)
+  - Document every file in the repo that a user would interact with
+  - Write section headers that describe content ("Atom/Stanza Engine" not "How It Works")
+  - List what's in the repo with a file tree — readers should know what they're looking at
+
+  DO NOT:
+  - Use generic section headers: "The Problem", "The Solution", "Key Features",
+    "How It Works", "Getting Started", "Overview", "Introduction", "About"
+  - Use adjectives to describe the project (robust, comprehensive, seamless, powerful)
+  - Write aspirational copy ("unlock the power of...", "your all-in-one solution")
+  - Add sections the project hasn't earned (Roadmap with no items, Contributing with no contributors)
+  - Include placeholder text — if you don't know, leave the placeholder token for the human
+  - Over-document obvious things — Quick Start should be 2-3 lines max
+  - Use emoji as section decoration (rockets, sparkles, lightbulbs)
+
+  ANTI-PATTERNS (vibecheck G146 will flag these):
+  ## The Problem / ## The Solution / ## Key Features / ## Why X?
+  ## Getting Started / ## What Makes X Special / ## Overview / ## Introduction
+
+  The best READMEs market through demonstration, not declaration.
 -->
 
-<p align="center">
-  <picture>
-    <source media="(prefers-color-scheme: dark)" srcset="docs/assets/header-dark.svg">
-    <source media="(prefers-color-scheme: light)" srcset="docs/assets/header-light.svg">
-    <img alt="PROJECT_NAME" src="docs/assets/header-dark.svg" width="700">
-  </picture>
-</p>
-
-<p align="center"><em>ONE_LINE_TAGLINE — technical descriptor, not aspirational</em></p>
+<h1 align="center">PROJECT_NAME</h1>
+<p align="center"><em>ONE_LINE_TAGLINE</em></p>
 
 <p align="center">
-  <a href="LICENSE.md"><img src="https://img.shields.io/github/license/USER/REPO?style=flat-square&color=BADGE_PRIMARY" alt="License"></a>
-  <img src="https://img.shields.io/badge/LANGUAGE-VERSION-BADGE_SECONDARY?style=flat-square" alt="Language">
+  <a href="LICENSE.md"><img src="https://img.shields.io/github/license/USER/REPO?style=flat-square&color=SKIN_PRIMARY" alt="License"></a>
+  <img src="https://img.shields.io/badge/LANGUAGE-VERSION-SKIN_SECONDARY?style=flat-square" alt="Language">
   <img src="https://img.shields.io/github/actions/workflow/status/USER/REPO/ci.yml?style=flat-square&label=build" alt="Build">
 </p>
 
 ---
 
-## Why PROJECT_NAME?
+<!--
+  2-3 sentences. First = what it does. Second = how it's different.
+  No adjectives. Concrete advantage with evidence.
+-->
 
-<!-- 3-5 sentences max. State the problem, then immediately state what makes your approach different. -->
-
-THE_PROBLEM_IN_ONE_SENTENCE.
-
-PROJECT_NAME solves this by DIFFERENTIATOR. Unlike ALTERNATIVE, it CONCRETE_ADVANTAGE.
+WHAT_IT_DOES_IN_ONE_SENTENCE. Unlike ALTERNATIVE, PROJECT_NAME CONCRETE_DIFFERENCE.
 
 ---
 
 ## Quick Start
 
 ```bash
-# Install
 INSTALL_COMMAND
-
-# Run
 RUN_COMMAND
 ```
 
-> [!NOTE]
-> FIRST_RUN_NOTE
-
 ---
 
-<!-- ============================================================
-     VARIANT: LIBRARY — use this section for libraries/packages
-     Delete the other two variant sections
-     ============================================================ -->
+<!-- ═══════════ VARIANT: LIBRARY ═══════════
+     For pip/npm/cargo packages. Delete other variants. -->
 
 ## Usage
 
 ```LANGUAGE
 IMPORT_STATEMENT
 
-// Minimal working example — copy-pasteable
-USAGE_EXAMPLE
+MINIMAL_WORKING_EXAMPLE
 ```
 
 ## API
@@ -71,86 +82,58 @@ USAGE_EXAMPLE
 | Function | Description |
 |----------|-------------|
 | `function_1()` | What it does |
-| `function_2()` | What it does |
-| `function_3()` | What it does |
 
-<!-- ============================================================
-     VARIANT: CLI TOOL — use this section for CLI tools
-     Delete the other two variant sections
-     ============================================================ -->
+<!-- ═══════════ VARIANT: CLI TOOL ═══════════
+     For command-line tools. Delete other variants. -->
 
-## Usage
+## Commands
 
 ```bash
-# Core commands
-COMMAND_1     # What it does
-COMMAND_2     # What it does
-COMMAND_3     # What it does
+COMMAND --flag     # description
+COMMAND --other    # description
 ```
 
-<!-- Optional: demo GIF or screenshot -->
-<!-- ![Demo](docs/assets/demo.gif) -->
+<!-- ═══════════ VARIANT: APPLICATION ═══════════
+     For deployed apps/services. Delete other variants. -->
 
-<!-- Optional: benchmarks (numbers only, no adjectives) -->
-<!-- ## Benchmarks
-| Tool | Time | Memory |
-|------|------|--------|
-| PROJECT_NAME | Xms | YMB |
-| Alternative | Xms | YMB | -->
-
-<!-- ============================================================
-     VARIANT: APPLICATION — use this section for applications
-     Delete the other two variant sections
-     ============================================================ -->
-
-## Getting Started
+## Deploy
 
 ```bash
-# Deploy
 DEPLOY_COMMAND
 ```
 
-## Features
-
-| Feature | Description |
-|---------|-------------|
-| **Feature 1** | What it does |
-| **Feature 2** | What it does |
-| **Feature 3** | What it does |
-
-<!-- Optional: screenshot -->
-<!-- ![Screenshot](docs/assets/screenshot.png) -->
-
-<!-- ============================================================
-     END VARIANTS — everything below is shared
-     ============================================================ -->
+<!-- ═══════════ END VARIANTS ═══════════ -->
 
 ---
 
-<!-- Optional: only include if the project has non-obvious runtime topology -->
+## What's in the Repo
+
+<!--
+  AI: Use the ACTUAL file tree. Not a generic template.
+  Run `ls` or `find` and document what's really there.
+-->
+
+```
+REPO/
+├── src/            ← DESCRIBE
+├── tests/          ← DESCRIBE
+├── REAL_FILE       ← DESCRIBE
+└── REAL_FILE       ← DESCRIBE
+```
+
+---
+
+<!--
+  Only include if >3 components with non-obvious relationships.
+  Use REAL component names. Delete if single-file project.
+-->
 <details>
 <summary><strong>Architecture</strong></summary>
 
 ```mermaid
 graph TD
-    A["Component 1"] --> B["Component 2"] --> C["Component 3"]
-
-    style A fill:#BADGE_PRIMARY,stroke:#STROKE_1,color:#fff
-    style B fill:#BADGE_SECONDARY,stroke:#STROKE_2,color:#fff
-    style C fill:#BADGE_TERTIARY,stroke:#STROKE_3,color:#fff
+    A["REAL_COMPONENT"] --> B["REAL_COMPONENT"] --> C["REAL_COMPONENT"]
 ```
-
-</details>
-
-<!-- Optional: only include if there are real alternatives worth comparing against -->
-<!-- Use numbers and verifiable claims only — no adjectives -->
-<details>
-<summary><strong>Compared to alternatives</strong></summary>
-
-| | PROJECT_NAME | Alternative 1 | Alternative 2 |
-|--|---|---|---|
-| Feature A | Yes | No | Yes |
-| Feature B | Xms | Yms | Zms |
 
 </details>
 
@@ -158,7 +141,7 @@ graph TD
 
 ## Contributing
 
-See [CONTRIBUTING.md](CONTRIBUTING.md) for development setup and guidelines.
+See [CONTRIBUTING.md](CONTRIBUTING.md).
 
 ## License
 
@@ -167,4 +150,4 @@ See [CONTRIBUTING.md](CONTRIBUTING.md) for development setup and guidelines.
 ---
 
 <p align="center">Built by <a href="https://github.com/USER">USER</a></p>
-<p align="center"><sub>README template from <a href="https://github.com/qinnovates/repo-design-kit">repo-design-kit</a></sub></p>
+<p align="center"><sub>Template: <a href="https://github.com/qinnovates/repo-design-kit">beautiful-basic-template</a></sub></p>
