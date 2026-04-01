@@ -10,7 +10,7 @@
   <img src="https://img.shields.io/badge/license-MIT-64D2FF?style=flat-square" alt="License">
   <img src="https://img.shields.io/badge/GitHub-Markdown-BF5AF2?style=flat-square" alt="GitHub Markdown">
   <img src="https://img.shields.io/badge/dark%20mode-supported-32D74B?style=flat-square" alt="Dark Mode">
-  <img src="https://img.shields.io/badge/skins-8%20gradients-FF9F0A?style=flat-square" alt="Skins">
+  <img src="https://img.shields.io/badge/skins-25-FF9F0A?style=flat-square" alt="Skins">
 </p>
 
 ---
@@ -87,43 +87,50 @@ cp repo-skin/templates/README.template.md your-project/README.md
 
 ---
 
-## Skins
+## Skins — 25 Options
 
-8 gradient palettes inspired by Apple's Neo Wallpaper collection. Each supports dark and light mode.
+Pill-shaped glass chrome banners with Turrell-inspired light art, Y3K colors, and experimental gradient techniques. [Full catalog →](templates/skins/SKINS.md)
 
-```mermaid
-graph TD
-    subgraph "Neo Palette"
-        A["Lime → Cyan"]
-        B["Magenta → Purple"]
-        C["Blue → Indigo"]
-        D["Orange → Gold"]
-        E["Cyan → Blue"]
-        F["Green → Teal"]
-        G["Red → Orange"]
-        H["Full Spectrum"]
-    end
+### Turrell + Cloud + Y3K (10 skins)
 
-    style A fill:#32D74B,stroke:#248A3D,color:#000
-    style B fill:#FF2D55,stroke:#D70015,color:#fff
-    style C fill:#0A84FF,stroke:#0064D2,color:#fff
-    style D fill:#FF9F0A,stroke:#C77800,color:#000
-    style E fill:#64D2FF,stroke:#0071A4,color:#000
-    style F fill:#30D158,stroke:#248A3D,color:#000
-    style G fill:#FF453A,stroke:#D70015,color:#fff
-    style H fill:#BF5AF2,stroke:#8944AB,color:#fff
-```
+Radial aperture glows with atmospheric cloud layers inside chrome glass pills.
 
-| Skin | Dark Mode Hex | Light Mode Hex | Suggested Use |
-|------|--------------|----------------|---------------|
-| **Lime Cyan** | `#32D74B` → `#64D2FF` | `#248A3D` → `#0071A4` | Dev tools, CLI |
-| **Magenta Purple** | `#FF2D55` → `#BF5AF2` | `#D70015` → `#8944AB` | AI/ML, creative |
-| **Blue Indigo** | `#0A84FF` → `#5E5CE6` | `#0064D2` → `#3634A3` | Mobile, design |
-| **Orange Gold** | `#FF9F0A` → `#FFD60A` | `#C77800` → `#B25000` | Education |
-| **Cyan Blue** | `#64D2FF` → `#0A84FF` | `#0071A4` → `#0064D2` | Data, APIs |
-| **Green Teal** | `#32D74B` → `#30D158` | `#248A3D` → `#1E8E3E` | Health, nature |
-| **Red Orange** | `#FF453A` → `#FF9F0A` | `#D70015` → `#C77800` | Security |
-| **Full Spectrum** | `#FF2D55` → `#BF5AF2` → `#5E5CE6` → `#64D2FF` | `#D70015` → `#8944AB` → `#3634A3` → `#0071A4` | Flagship |
+| Skin | Colors | Mood |
+|------|--------|------|
+| `plasma-vesicle` | Magenta → ultraviolet | Bioluminescent jellyfish in a pressure-black trench |
+| `synth-meridian` | Cyan → teal → black | Synthetic cyan decaying through surgical teal |
+| `reactor-bloom` | Yellow → orange → crimson | Nuclear yellow through plasma orange |
+| `abyssal-signal` | Green → jade → black | Deep-sea sonar in bioluminescent algae |
+| `synaptic-discharge` | Cyan → blue → violet | Thought propagating through cerebrospinal fluid |
+| `plasma-liturgy` | Magenta → violet → purple | Dark matter collapsing into consciousness |
+| `xenobiome-signal` | Lime → green → teal | A chloroplast that learned to think |
+| `upload-hemorrhage` | Red → magenta → purple | Consciousness ripping itself in half |
+| `synaptic-aurealis` | Lavender → violet → deep purple | Event horizon of an unthought thought |
+| `pelagic-drift` | Mint → teal → deep ocean | Deep-sea creature generating its own light |
+
+### Experimental (15 skins)
+
+Structural gradient techniques — not just color swaps.
+
+| Skin | Technique |
+|------|-----------|
+| `split-field` | Warm left / cold right, bar at the weather front |
+| `double-aperture` | Two portals, void between |
+| `horizon-line` | Top-to-bottom sunset, bar IS the horizon |
+| `interference` | Two overlapping radials creating constructive interference |
+| `void-slit` | Near-black, thin white line is the only light |
+| `chromatic-stack` | RGB bands stacked vertically |
+| `scatter` | Many tiny colored blobs like particle collisions |
+| `deep-monochrome` | Single hue (Klein blue), infinite depth |
+| `bruise` | Purple-brown-yellow-green — colors of healing skin |
+| `overexposed` | Washed out, blown highlights |
+| `static` | Speckled white noise behind glass |
+| `thermal` | FLIR infrared false color |
+| `oil-slick` | Full iridescent rainbow |
+| `negative` | Inverted: bright pill, dark bar |
+| `pulse` | Single bright point, rest void |
+
+> Preview all skins locally: open `templates/skins/preview/turrell-cloud.html` or `experimental.html` in a browser. Toggle button cycles black / transparent / checker backgrounds.
 
 ---
 
@@ -494,18 +501,25 @@ graph TD
 ## Included Files
 
 ```
-repo-skin/
-├── docs/
-│   └── assets/
-│       ├── header-dark.svg          # Full Spectrum gradient (dark mode)
-│       └── header-light.svg         # Full Spectrum gradient (light mode)
+repo-design-kit/
+├── docs/assets/
+│   ├── header-dark.svg              # Generated SVG header (dark mode)
+│   └── header-light.svg             # Generated SVG header (light mode)
+├── scripts/
+│   ├── gen-header.py                # Liquid glass SVG generator
+│   └── mockups/                     # Working HTML mockups
 ├── templates/
 │   ├── skins/
-│   │   └── SKINS.md                 # All 8 gradient palettes with hex values
-│   └── README.template.md           # Copy-paste README scaffold
-├── .gitignore                       # Hardened for secrets & PII
-├── LICENSE.md                       # MIT
-└── README.md                        # This file (also serves as a live demo)
+│   │   ├── SKINS.md                 # 25 skins catalog
+│   │   └── preview/                 # HTML previews (open in browser)
+│   │       ├── turrell-cloud.html   # 10 Turrell + Y3K skins
+│   │       └── experimental.html    # 15 experimental skins
+│   ├── README.template.md           # beautiful-basic-template (with AI guide)
+│   ├── vibecheck.yml                # GitHub Action template for vibecheck
+│   └── CONTRIBUTING.template.md     # Contributing template
+├── .gitignore
+├── LICENSE.md
+└── README.md                        # This file
 ```
 
 ---
